@@ -19,6 +19,7 @@
 		944D0ACF17906590007DFE6A /* MainStoryboard_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 944D0ACD17906590007DFE6A /* MainStoryboard_iPhone.storyboard */; };
 		944D0AD217906590007DFE6A /* MainStoryboard_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 944D0AD017906590007DFE6A /* MainStoryboard_iPad.storyboard */; };
 		944D0AD517906590007DFE6A /* SplitViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 944D0AD417906590007DFE6A /* SplitViewController.m */; };
+		944D0ADE179066D6007DFE6A /* TimeSheet.m in Sources */ = {isa = PBXBuildFile; fileRef = 944D0ADD179066D6007DFE6A /* TimeSheet.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -39,6 +40,8 @@
 		944D0AD117906590007DFE6A /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard_iPad.storyboard; sourceTree = "<group>"; };
 		944D0AD317906590007DFE6A /* SplitViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SplitViewController.h; sourceTree = "<group>"; };
 		944D0AD417906590007DFE6A /* SplitViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SplitViewController.m; sourceTree = "<group>"; };
+		944D0ADC179066D6007DFE6A /* TimeSheet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TimeSheet.h; sourceTree = "<group>"; };
+		944D0ADD179066D6007DFE6A /* TimeSheet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TimeSheet.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,6 +88,7 @@
 		944D0ABB17906590007DFE6A /* SampleTimer */ = {
 			isa = PBXGroup;
 			children = (
+				944D0ADB179066A1007DFE6A /* Time */,
 				944D0AC417906590007DFE6A /* SplitAppDelegate.h */,
 				944D0AC517906590007DFE6A /* SplitAppDelegate.m */,
 				944D0ACD17906590007DFE6A /* MainStoryboard_iPhone.storyboard */,
@@ -108,6 +112,15 @@
 				944D0ACB17906590007DFE6A /* Default-568h@2x.png */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		944D0ADB179066A1007DFE6A /* Time */ = {
+			isa = PBXGroup;
+			children = (
+				944D0ADC179066D6007DFE6A /* TimeSheet.h */,
+				944D0ADD179066D6007DFE6A /* TimeSheet.m */,
+			);
+			name = Time;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -181,6 +194,7 @@
 				944D0AC217906590007DFE6A /* main.m in Sources */,
 				944D0AC617906590007DFE6A /* SplitAppDelegate.m in Sources */,
 				944D0AD517906590007DFE6A /* SplitViewController.m in Sources */,
+				944D0ADE179066D6007DFE6A /* TimeSheet.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
