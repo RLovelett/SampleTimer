@@ -22,6 +22,8 @@
 - (void) addSplit;
 - (void) stop;
 
+- (NSString*) lastSplit:(NSString*)format;
+
 // instanceOfTimeSheet = [new TimeSheett] ??
 // [instanceOfTimeSheet start]
 // [instanceOfTimeSheet getElapsedTime:"HH:mm:ss"]

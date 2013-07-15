@@ -14,6 +14,7 @@
 {
     self = [super init];
     formatter = [[NSDateFormatter alloc] init];
+    splitTimes = [[NSMutableArray alloc] init];
     
     return self;
 }
@@ -28,9 +29,31 @@
     startTime = [NSDate date];
 }
 
+- (void) addSplit
+{
+    NSDate* now = [NSDate date];
+    [splitTimes addObject: now];
+}
+
 - (void) stop
 {
     stopTime = [NSDate date];
+}
+
+- (NSString*) lastSplit:(NSString *)format
+{
+    NSDate* now = [NSDate date];
+    NSDate* nextToLast;
+    NSDate* last = [splitTimes lastObject];
+    if ([splitTimes count] < 2) {
+        nextToLast = now;
+    } else {
+        nextToLast = [splitTimes objectAtIndex:[splitTimes count] - 2];
+    }
+    
+    NSTimeInterval interval = fabs([last timeIntervalSinceDate: nextToLast]);
+    
+    return [NSString stringWithFormat:@"Interval %.20f", interval];
 }
 
 - (NSString*) getElapsedTime:(NSString *)format

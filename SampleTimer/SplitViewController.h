@@ -7,7 +7,16 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "TimeSheet.h"
 
-@interface SplitViewController : UIViewController
+@interface SplitViewController : UIViewController {
+    TimeSheet* model;
+}
+
+@property (weak, nonatomic) IBOutlet UILabel *display;
+
+- (IBAction) startButtonPress:(id)sender;
+- (IBAction) splitButtonPress:(id)sender;
+- (IBAction) stopButtonPress:(id)sender;
 
 @end
