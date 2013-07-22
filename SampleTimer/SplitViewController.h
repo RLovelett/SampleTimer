@@ -12,6 +12,7 @@
 @interface SplitViewController : UIViewController {
     TimeSheet* model;
     UIFont* labelFont;
+    NSTimer* updateUI;
 }
 
 @property (weak, nonatomic) IBOutlet UILabel *display;

@@ -23,6 +23,13 @@
     model = [[TimeSheet alloc] init];
     labelFont = [UIFont fontWithName:@"BPmono" size:50];
     display.font = labelFont;
+
+    updateUI = [NSTimer scheduledTimerWithTimeInterval:(1/30) target:self selector:@selector(updateLabel) userInfo:nil repeats:YES];
+}
+
+- (void) updateLabel
+{
+    display.text = [model getElapsedTime:@"ss.SSSS"];
 }
 
 - (void) didReceiveMemoryWarning
@@ -46,6 +53,7 @@
 
 - (IBAction) stopButtonPress: (id)sender
 {
+    [updateUI invalidate];
     NSLog(@"Stop Button");
     [model stop];
     NSString* time = [model getElapsedTime:@"ss.SSSS"];
