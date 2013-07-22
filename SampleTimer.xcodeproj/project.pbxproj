@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		943BEFE9179D92EA00CB7E74 /* NSTimeIntervalFormatter.m in Sources */ = {isa = PBXBuildFile; fileRef = 943BEFE8179D92EA00CB7E74 /* NSTimeIntervalFormatter.m */; };
+		943BEFED179D980500CB7E74 /* BPmono.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 943BEFEA179D980500CB7E74 /* BPmono.ttf */; };
+		943BEFEE179D980500CB7E74 /* BPmonoBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 943BEFEB179D980500CB7E74 /* BPmonoBold.ttf */; };
+		943BEFEF179D980500CB7E74 /* BPmonoItalics.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 943BEFEC179D980500CB7E74 /* BPmonoItalics.ttf */; };
 		944D0AB617906590007DFE6A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 944D0AB517906590007DFE6A /* UIKit.framework */; };
 		944D0AB817906590007DFE6A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 944D0AB717906590007DFE6A /* Foundation.framework */; };
 		944D0ABA17906590007DFE6A /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 944D0AB917906590007DFE6A /* CoreGraphics.framework */; };
@@ -27,6 +30,9 @@
 		943BEFE6179D92EA00CB7E74 /* Constants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
 		943BEFE7179D92EA00CB7E74 /* NSTimeIntervalFormatter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSTimeIntervalFormatter.h; sourceTree = "<group>"; };
 		943BEFE8179D92EA00CB7E74 /* NSTimeIntervalFormatter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSTimeIntervalFormatter.m; sourceTree = "<group>"; };
+		943BEFEA179D980500CB7E74 /* BPmono.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = BPmono.ttf; sourceTree = "<group>"; };
+		943BEFEB179D980500CB7E74 /* BPmonoBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = BPmonoBold.ttf; sourceTree = "<group>"; };
+		943BEFEC179D980500CB7E74 /* BPmonoItalics.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = BPmonoItalics.ttf; sourceTree = "<group>"; };
 		944D0AB217906590007DFE6A /* SampleTimer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SampleTimer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		944D0AB517906590007DFE6A /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		944D0AB717906590007DFE6A /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -118,6 +124,9 @@
 		944D0ABC17906590007DFE6A /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				943BEFEA179D980500CB7E74 /* BPmono.ttf */,
+				943BEFEB179D980500CB7E74 /* BPmonoBold.ttf */,
+				943BEFEC179D980500CB7E74 /* BPmonoItalics.ttf */,
 				944D0ABD17906590007DFE6A /* SampleTimer-Info.plist */,
 				944D0ABE17906590007DFE6A /* InfoPlist.strings */,
 				944D0AC117906590007DFE6A /* main.m */,
@@ -196,6 +205,9 @@
 				944D0ACC17906590007DFE6A /* Default-568h@2x.png in Resources */,
 				944D0ACF17906590007DFE6A /* MainStoryboard_iPhone.storyboard in Resources */,
 				944D0AD217906590007DFE6A /* MainStoryboard_iPad.storyboard in Resources */,
+				943BEFED179D980500CB7E74 /* BPmono.ttf in Resources */,
+				943BEFEE179D980500CB7E74 /* BPmonoBold.ttf in Resources */,
+				943BEFEF179D980500CB7E74 /* BPmonoItalics.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

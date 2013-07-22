@@ -14,11 +14,15 @@
 
 @implementation SplitViewController
 
+@synthesize display;
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
     model = [[TimeSheet alloc] init];
+    labelFont = [UIFont fontWithName:@"BPmono" size:50];
+    display.font = labelFont;
 }
 
 - (void) didReceiveMemoryWarning
@@ -37,7 +41,7 @@
 {
     NSLog(@"Split Button");
     [model addSplit];
-    _display.text = [model lastSplit:@"HH:MM:ss.SSSS"];
+    display.text = [model lastSplit:@"HH:MM:ss.SSSS"];
 }
 
 - (IBAction) stopButtonPress: (id)sender
@@ -46,7 +50,7 @@
     [model stop];
     NSString* time = [model getElapsedTime:@"ss.SSSS"];
     NSLog(@"[Total Elapsed] %@", time);
-    _display.text = time;
+    display.text = time;
 }
 
 @end
