@@ -7,13 +7,14 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "NSTimeIntervalFormatter.h"
 
 @interface TimeSheet : NSObject {
     NSString* eventTitle;
     NSDate* startTime;
     NSDate* stopTime;
     NSMutableArray* splitTimes;
-    NSDateFormatter* formatter;
+    NSTimeIntervalFormatter* formatter;
 }
 
 // [instanceOfTimeSheet setTitle:"New Title"]

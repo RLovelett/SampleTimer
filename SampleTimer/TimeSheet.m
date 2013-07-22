@@ -7,13 +7,14 @@
 //
 
 #import "TimeSheet.h"
+#import "NSTimeIntervalFormatter.h"
 
 @implementation TimeSheet
 
 - (id) init
 {
     self = [super init];
-    formatter = [[NSDateFormatter alloc] init];
+    formatter = [[NSTimeIntervalFormatter alloc] init];
     splitTimes = [[NSMutableArray alloc] init];
     
     return self;
@@ -52,8 +53,9 @@
     }
     
     NSTimeInterval interval = fabs([last timeIntervalSinceDate: nextToLast]);
+    [formatter setFormat: format];
     
-    return [NSString stringWithFormat:@"Interval %.20f", interval];
+    return [formatter stringFromInterval: interval];
 }
 
 - (NSString*) getElapsedTime:(NSString *)format
@@ -66,9 +68,8 @@
         interval = [stopTime timeIntervalSinceDate: startTime];
     }
     
-    NSDate* elapsed = [NSDate dateWithTimeIntervalSinceReferenceDate: interval];
-    [formatter setDateFormat: format];
-    return [formatter stringFromDate: elapsed];
+    [formatter setFormat: format];
+    return [formatter stringFromInterval: interval];
 }
 
 @end

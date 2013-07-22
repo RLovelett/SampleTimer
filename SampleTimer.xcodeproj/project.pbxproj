@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		943BEFE9179D92EA00CB7E74 /* NSTimeIntervalFormatter.m in Sources */ = {isa = PBXBuildFile; fileRef = 943BEFE8179D92EA00CB7E74 /* NSTimeIntervalFormatter.m */; };
 		944D0AB617906590007DFE6A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 944D0AB517906590007DFE6A /* UIKit.framework */; };
 		944D0AB817906590007DFE6A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 944D0AB717906590007DFE6A /* Foundation.framework */; };
 		944D0ABA17906590007DFE6A /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 944D0AB917906590007DFE6A /* CoreGraphics.framework */; };
@@ -23,6 +24,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		943BEFE6179D92EA00CB7E74 /* Constants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
+		943BEFE7179D92EA00CB7E74 /* NSTimeIntervalFormatter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSTimeIntervalFormatter.h; sourceTree = "<group>"; };
+		943BEFE8179D92EA00CB7E74 /* NSTimeIntervalFormatter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSTimeIntervalFormatter.m; sourceTree = "<group>"; };
 		944D0AB217906590007DFE6A /* SampleTimer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SampleTimer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		944D0AB517906590007DFE6A /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		944D0AB717906590007DFE6A /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -58,6 +62,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		943BEFE5179D92C700CB7E74 /* NSTimeIntervalFormatter */ = {
+			isa = PBXGroup;
+			children = (
+				943BEFE6179D92EA00CB7E74 /* Constants.h */,
+				943BEFE7179D92EA00CB7E74 /* NSTimeIntervalFormatter.h */,
+				943BEFE8179D92EA00CB7E74 /* NSTimeIntervalFormatter.m */,
+			);
+			name = NSTimeIntervalFormatter;
+			sourceTree = "<group>";
+		};
 		944D0AA917906590007DFE6A = {
 			isa = PBXGroup;
 			children = (
@@ -88,6 +102,7 @@
 		944D0ABB17906590007DFE6A /* SampleTimer */ = {
 			isa = PBXGroup;
 			children = (
+				943BEFE5179D92C700CB7E74 /* NSTimeIntervalFormatter */,
 				944D0ADB179066A1007DFE6A /* Time */,
 				944D0AC417906590007DFE6A /* SplitAppDelegate.h */,
 				944D0AC517906590007DFE6A /* SplitAppDelegate.m */,
@@ -195,6 +210,7 @@
 				944D0AC617906590007DFE6A /* SplitAppDelegate.m in Sources */,
 				944D0AD517906590007DFE6A /* SplitViewController.m in Sources */,
 				944D0ADE179066D6007DFE6A /* TimeSheet.m in Sources */,
+				943BEFE9179D92EA00CB7E74 /* NSTimeIntervalFormatter.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -327,6 +343,7 @@
 				944D0ADA17906590007DFE6A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
