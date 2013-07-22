@@ -61,4 +61,24 @@
     display.text = time;
 }
 
+- (IBAction)startOnTap:(UITapGestureRecognizer *)sender
+{
+    NSLog(@"Start Button");
+    [model start];
+}
+
+- (IBAction)stopOnHold:(UILongPressGestureRecognizer *)sender
+{
+    NSLog(@"[HoldState] %d", sender.state);
+    if (sender.state == UIGestureRecognizerStateBegan)
+    {
+        [model stop];
+        [updateUI invalidate];
+        NSLog(@"Stop Button");
+        NSString* time = [model getElapsedTime:@"ss.SSSS"];
+        NSLog(@"[Total Elapsed] %@", time);
+        display.text = time;
+    }
+}
+
 @end

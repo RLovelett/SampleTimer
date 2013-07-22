@@ -68,6 +68,7 @@
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <gestureRecognizers/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="5mV-4j-u4f" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="4A9-CS-6Ca"/>
                             <constraint firstItem="VAc-Cz-8xh" firstAttribute="centerX" secondItem="3" secondAttribute="centerX" type="default" id="Glb-wg-3vy"/>
@@ -78,12 +79,26 @@
                             <constraint firstItem="zwi-QG-R7g" firstAttribute="top" secondItem="3" secondAttribute="top" constant="252" id="l9E-at-gnW"/>
                             <constraint firstItem="zwi-QG-R7g" firstAttribute="leading" secondItem="3" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="tzP-HD-LrE"/>
                         </constraints>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="9ba-3J-muN" appends="YES" id="dbR-pT-cAY"/>
+                            <outletCollection property="gestureRecognizers" destination="1Qr-zK-6f0" appends="YES" id="f7O-CI-mtM"/>
+                        </connections>
                     </view>
                     <connections>
                         <outlet property="display" destination="VAc-Cz-8xh" id="ipK-hl-5Ep"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="9ba-3J-muN">
+                    <connections>
+                        <action selector="startOnTap:" destination="2" id="qXs-mi-ipa"/>
+                    </connections>
+                </tapGestureRecognizer>
+                <pongPressGestureRecognizer allowableMovement="10" minimumPressDuration="0.5" id="1Qr-zK-6f0">
+                    <connections>
+                        <action selector="stopOnHold:" destination="2" id="bXO-ol-dhB"/>
+                    </connections>
+                </pongPressGestureRecognizer>
             </objects>
         </scene>
     </scenes>

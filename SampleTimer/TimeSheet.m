@@ -11,6 +11,8 @@
 
 @implementation TimeSheet
 
+double const holdDuration = 0.5;
+
 - (id) init
 {
     self = [super init];
@@ -66,6 +68,7 @@
         interval = [now timeIntervalSinceDate: startTime];
     } else {
         interval = [stopTime timeIntervalSinceDate: startTime];
+        interval -= holdDuration;
     }
     
     [formatter setFormat: format];
