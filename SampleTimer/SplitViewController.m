@@ -16,6 +16,8 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    // Register motion ended
+    [self canBecomeFirstResponder];
 	// Do any additional setup after loading the view, typically from a nib.
     model = [[TimeSheet alloc] init];
     labelFont = [UIFont fontWithName:@"BPmono" size:50];
@@ -23,10 +25,26 @@
     millidisplay.font = [UIFont fontWithName:@"BPmono" size:24];
 }
 
+- (BOOL)canBecomeFirstResponder {
+    return YES;
+}
+
 - (void) touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
 {
     NSLog(@"caught");
     [model catchTemp];
+}
+
+- (void) motionEnded:(UIEventSubtype)motion withEvent:(UIEvent *)event
+{
+    if (motion == UIEventSubtypeMotionShake)
+    {
+        [model undo];
+        if (![updateUI isValid])
+        {
+            updateUI = [NSTimer scheduledTimerWithTimeInterval:(1/30) target:self selector:@selector(updateLabel) userInfo:nil repeats:YES];
+        }
+    }
 }
 
 - (void) updateLabel
@@ -43,8 +61,21 @@
 
 - (IBAction)startOnTap:(UITapGestureRecognizer *)sender
 {
-    [model start];
-    updateUI = [NSTimer scheduledTimerWithTimeInterval:(1/30) target:self selector:@selector(updateLabel) userInfo:nil repeats:YES];
+    if ([model isStarted])
+    {
+        [model addSplit];
+    }
+    else
+    {
+        [model start];
+    }
+    
+    // Only create a new NSTimer if one does not exist
+    // OR the current updateUI is invalid
+    if (![updateUI isValid])
+    {
+        updateUI = [NSTimer scheduledTimerWithTimeInterval:(1/30) target:self selector:@selector(updateLabel) userInfo:nil repeats:YES];
+    }
 }
 
 - (IBAction)stopOnHold:(UILongPressGestureRecognizer *)sender
