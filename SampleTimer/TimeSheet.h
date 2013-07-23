@@ -9,12 +9,20 @@
 #import <Foundation/Foundation.h>
 #import "NSTimeIntervalFormatter.h"
 
+typedef enum {
+    FRESH,
+    START,
+    SPLIT,
+    STOP
+} TimeSheetActions;
+
 @interface TimeSheet : NSObject {
     NSString* eventTitle;
     NSDate* startTime;
     NSDate* stopTime;
     NSDate* tempTime;
     NSMutableArray* splitTimes;
+    TimeSheetActions lastAction;
     
     NSTimeIntervalFormatter* formatter;
 }
@@ -22,10 +30,12 @@
 // [instanceOfTimeSheet setTitle:"New Title"]
 - (void) setTitle:(NSString*)newTitle;
 - (void) start;
-//- (void) addSplit;
+- (void) addSplit;
 - (void) stop;
 - (void) catchTemp;
+- (void) undo;
 
+- (Boolean) isStarted;
 - (NSString*) lastSplit:(NSString*)format;
 
 // instanceOfTimeSheet = [new TimeSheett] ??

@@ -16,6 +16,7 @@
     self = [super init];
     formatter = [[NSTimeIntervalFormatter alloc] init];
     splitTimes = [[NSMutableArray alloc] init];
+    lastAction = FRESH;
     
     return self;
 }
@@ -32,39 +33,63 @@
 
 - (void) start
 {
-    if (startTime == NULL)
-    {
-        startTime = tempTime;
-        [splitTimes addObject: tempTime];
-    }
-    else
-    {
-        if (stopTime == NULL)
-        {
-            NSLog(@"added split");
-            [splitTimes addObject: tempTime];
-        }
-        
-    }
+    lastAction = START;
+    startTime = tempTime;
+    [splitTimes addObject: tempTime];
 }
 
-/*- (void) addSplit
+- (void) addSplit
 {
-    NSDate* now = [NSDate date];
-    [splitTimes addObject: now];
-}*/
+    [splitTimes addObject: tempTime];
+    lastAction = SPLIT;
+}
 
 - (void) stop
 {
-    if (stopTime == NULL)
-    {
-        stopTime = tempTime;
-    }
-    else
-    {
-    stopTime = NULL;
-    startTime = NULL;
-    splitTimes = NULL;
+    stopTime = tempTime;
+    lastAction = STOP;
+}
+
+- (Boolean) isStarted
+{
+    return lastAction != FRESH;
+}
+
+- (Boolean) hasSplits
+{
+    return [splitTimes count] > 1;
+}
+
+- (void) undo
+{
+    switch (lastAction) {
+        case START:
+            lastAction = FRESH;
+            startTime = nil;
+            [splitTimes removeAllObjects];
+            break;
+        case SPLIT:
+            [splitTimes removeLastObject];
+            if ([self hasSplits]) {
+                lastAction = SPLIT;
+            }
+            else
+            {
+                lastAction = START;
+            }
+            break;
+        case STOP:
+            stopTime = nil;
+            if ([self hasSplits]) {
+                lastAction = SPLIT;
+            }
+            else
+            {
+                lastAction = START;
+            }
+            break;
+        default:
+            break;
     }
 }
 
