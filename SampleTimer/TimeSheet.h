@@ -27,7 +27,6 @@ typedef enum {
     NSTimeIntervalFormatter* formatter;
 }
 
-// [instanceOfTimeSheet setTitle:"New Title"]
 - (void) setTitle:(NSString*)newTitle;
 - (void) start;
 - (void) addSplit;
@@ -37,10 +36,6 @@ typedef enum {
 
 - (Boolean) isStarted;
 - (NSString*) lastSplit:(NSString*)format;
-
-// instanceOfTimeSheet = [new TimeSheett] ??
-// [instanceOfTimeSheet start]
-// [instanceOfTimeSheet getElapsedTime:"HH:mm:ss"]
 - (NSString*) getElapsedTime:(NSString*)format;
 
 @end

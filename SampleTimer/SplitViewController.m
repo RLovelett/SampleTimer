@@ -84,9 +84,6 @@
     {
         [model stop];
         [updateUI invalidate];
-        NSLog(@"Stop Button");
-        NSString* time = [model getElapsedTime:@"MM:ss.SS"];
-        NSLog(@"[Total Elapsed] %@", time);
         [self updateLabel];
     }
 }
