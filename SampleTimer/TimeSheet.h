@@ -13,15 +13,16 @@
     NSString* eventTitle;
     NSDate* startTime;
     NSDate* stopTime;
-    NSMutableArray* splitTimes;
     NSDate* tempTime;
+    NSMutableArray* splitTimes;
+    
     NSTimeIntervalFormatter* formatter;
 }
 
 // [instanceOfTimeSheet setTitle:"New Title"]
 - (void) setTitle:(NSString*)newTitle;
 - (void) start;
-- (void) addSplit;
+//- (void) addSplit;
 - (void) stop;
 - (void) catchTemp;
 

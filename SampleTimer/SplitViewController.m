@@ -35,7 +35,7 @@
 
 - (void) updateLabel
 {
-    display.text = [model getElapsedTime:@"ss.SSSS"];
+    display.text = [model getElapsedTime:@"MM:ss.SS"];
 }
 
 - (void) didReceiveMemoryWarning
@@ -44,7 +44,7 @@
     // Dispose of any resources that can be recreated.
 }
 
-- (IBAction) startButtonPress:(id)sender
+/*- (IBAction) startButtonPress:(id)sender
 {
     NSLog(@"Start Button");
     [model start];
@@ -54,7 +54,7 @@
 {
     NSLog(@"Split Button");
     [model addSplit];
-    display.text = [model lastSplit:@"HH:MM:ss.SSSS"];
+    display.text = [model lastSplit:@"MM:ss.SS"];
 }
 
 - (IBAction) stopButtonPress: (id)sender
@@ -62,15 +62,14 @@
     [updateUI invalidate];
     NSLog(@"Stop Button");
     [model stop];
-    NSString* time = [model getElapsedTime:@"ss.SSSS"];
+    NSString* time = [model getElapsedTime:@"MM:ss.SS"];
     NSLog(@"[Total Elapsed] %@", time);
     display.text = time;
-}
+}*/
 
 - (IBAction)startOnTap:(UITapGestureRecognizer *)sender
 {
-    NSLog(@"Start Button");
-    [model start];
+        [model start];
 }
 
 - (IBAction)stopOnHold:(UILongPressGestureRecognizer *)sender
@@ -81,7 +80,7 @@
         [model stop];
         [updateUI invalidate];
         NSLog(@"Stop Button");
-        NSString* time = [model getElapsedTime:@"ss.SSSS"];
+        NSString* time = [model getElapsedTime:@"MM:ss.SS"];
         NSLog(@"[Total Elapsed] %@", time);
         display.text = time;
     }

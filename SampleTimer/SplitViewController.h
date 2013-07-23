@@ -18,9 +18,9 @@
 
 @property (weak, nonatomic) IBOutlet UILabel *display;
 
-- (IBAction) startButtonPress:(id)sender;
-- (IBAction) splitButtonPress:(id)sender;
-- (IBAction) stopButtonPress:(id)sender;
+//- (IBAction) startButtonPress:(id)sender;
+//- (IBAction) splitButtonPress:(id)sender;
+//- (IBAction) stopButtonPress:(id)sender;
 - (IBAction)startOnTap:(UITapGestureRecognizer *)sender;
 - (IBAction)stopOnHold:(UILongPressGestureRecognizer *)sender;
 

@@ -34,14 +34,23 @@ double const holdDuration = 0.5;
 
 - (void) start
 {
-    startTime = [NSDate date];
+    if (startTime == NULL)
+    {
+        startTime = tempTime;
+        [splitTimes addObject: tempTime];
+    }
+    else
+    {
+        NSLog(@"added split");
+        [splitTimes addObject: tempTime];
+    }
 }
 
-- (void) addSplit
+/*- (void) addSplit
 {
     NSDate* now = [NSDate date];
     [splitTimes addObject: now];
-}
+}*/
 
 - (void) stop
 {
