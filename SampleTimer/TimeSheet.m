@@ -11,8 +11,6 @@
 
 @implementation TimeSheet
 
-double const holdDuration = 0.5;
-
 - (id) init
 {
     self = [super init];
