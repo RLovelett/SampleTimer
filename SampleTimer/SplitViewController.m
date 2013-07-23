@@ -23,8 +23,6 @@
     model = [[TimeSheet alloc] init];
     labelFont = [UIFont fontWithName:@"BPmono" size:50];
     display.font = labelFont;
-
-    updateUI = [NSTimer scheduledTimerWithTimeInterval:(1/30) target:self selector:@selector(updateLabel) userInfo:nil repeats:YES];
 }
 
 - (void) touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
@@ -69,12 +67,13 @@
 
 - (IBAction)startOnTap:(UITapGestureRecognizer *)sender
 {
-        [model start];
+    [model start];
+    updateUI = [NSTimer scheduledTimerWithTimeInterval:(1/30) target:self selector:@selector(updateLabel) userInfo:nil repeats:YES];
 }
 
 - (IBAction)stopOnHold:(UILongPressGestureRecognizer *)sender
 {
-    NSLog(@"[HoldState] %d", sender.state);
+   //NSLog(@"[HoldState] %d", sender.state);
     if (sender.state == UIGestureRecognizerStateBegan)
     {
         [model stop];

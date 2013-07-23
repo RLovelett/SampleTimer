@@ -41,8 +41,12 @@ double const holdDuration = 0.5;
     }
     else
     {
-        NSLog(@"added split");
-        [splitTimes addObject: tempTime];
+        if (stopTime == NULL)
+        {
+            NSLog(@"added split");
+            [splitTimes addObject: tempTime];
+        }
+        
     }
 }
 
@@ -54,7 +58,15 @@ double const holdDuration = 0.5;
 
 - (void) stop
 {
-    stopTime = [NSDate date];
+    if (stopTime == NULL)
+    {
+    stopTime = tempTime;
+    }
+    else
+    {
+        stopTime = NULL;
+        startTime = NULL;
+    }
 }
 
 - (NSString*) lastSplit:(NSString *)format

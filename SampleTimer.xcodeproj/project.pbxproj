@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1CECF143179E3B4600EC2200 /* Quicksand-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = 1CECF142179E3B4600EC2200 /* Quicksand-Light.otf */; };
+		1CECF145179E3D0500EC2200 /* Bowman.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1CECF144179E3D0500EC2200 /* Bowman.ttf */; };
 		943BEFE9179D92EA00CB7E74 /* NSTimeIntervalFormatter.m in Sources */ = {isa = PBXBuildFile; fileRef = 943BEFE8179D92EA00CB7E74 /* NSTimeIntervalFormatter.m */; };
 		943BEFED179D980500CB7E74 /* BPmono.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 943BEFEA179D980500CB7E74 /* BPmono.ttf */; };
 		943BEFEE179D980500CB7E74 /* BPmonoBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 943BEFEB179D980500CB7E74 /* BPmonoBold.ttf */; };
@@ -27,6 +29,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1CECF142179E3B4600EC2200 /* Quicksand-Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Quicksand-Light.otf"; sourceTree = "<group>"; };
+		1CECF144179E3D0500EC2200 /* Bowman.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Bowman.ttf; sourceTree = "<group>"; };
 		943BEFE6179D92EA00CB7E74 /* Constants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
 		943BEFE7179D92EA00CB7E74 /* NSTimeIntervalFormatter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSTimeIntervalFormatter.h; sourceTree = "<group>"; };
 		943BEFE8179D92EA00CB7E74 /* NSTimeIntervalFormatter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSTimeIntervalFormatter.m; sourceTree = "<group>"; };
@@ -124,6 +128,8 @@
 		944D0ABC17906590007DFE6A /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				1CECF144179E3D0500EC2200 /* Bowman.ttf */,
+				1CECF142179E3B4600EC2200 /* Quicksand-Light.otf */,
 				943BEFEA179D980500CB7E74 /* BPmono.ttf */,
 				943BEFEB179D980500CB7E74 /* BPmonoBold.ttf */,
 				943BEFEC179D980500CB7E74 /* BPmonoItalics.ttf */,
@@ -208,6 +214,8 @@
 				943BEFED179D980500CB7E74 /* BPmono.ttf in Resources */,
 				943BEFEE179D980500CB7E74 /* BPmonoBold.ttf in Resources */,
 				943BEFEF179D980500CB7E74 /* BPmonoItalics.ttf in Resources */,
+				1CECF143179E3B4600EC2200 /* Quicksand-Light.otf in Resources */,
+				1CECF145179E3D0500EC2200 /* Bowman.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

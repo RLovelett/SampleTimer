@@ -26,6 +26,8 @@
 	<true/>
 	<key>UIAppFonts</key>
 	<array>
+		<string>Bowman.ttf</string>
+		<string>Quicksand-Light.otf</string>
 		<string>BPmono.ttf</string>
 	</array>
 	<key>UIMainStoryboardFile</key>
