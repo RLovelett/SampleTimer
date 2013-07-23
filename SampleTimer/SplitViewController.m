@@ -32,7 +32,7 @@
 - (void) updateLabel
 {
     display.text = [model getElapsedTime:@"MM:ss.SS"];
-    millidisplay.text = [model getElapsedTime:@"S"];
+    millidisplay.text = [[model getElapsedTime:@"SSS"] substringWithRange:NSMakeRange(2, 1)];
 }
 
 - (void) didReceiveMemoryWarning
@@ -56,8 +56,7 @@
         NSLog(@"Stop Button");
         NSString* time = [model getElapsedTime:@"MM:ss.SS"];
         NSLog(@"[Total Elapsed] %@", time);
-        display.text = time;
-        millidisplay.text = [model getElapsedTime:@"S"];
+        [self updateLabel];
     }
 }
 
