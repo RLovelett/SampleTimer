@@ -22,6 +22,11 @@ double const holdDuration = 0.5;
     return self;
 }
 
+- (void) catchTemp
+{
+    tempTime = [NSDate date];
+}
+
 - (void) setTitle:(NSString *)newTitle
 {
     eventTitle = newTitle;
@@ -67,8 +72,7 @@ double const holdDuration = 0.5;
         NSDate* now = [NSDate date];
         interval = [now timeIntervalSinceDate: startTime];
     } else {
-        interval = [stopTime timeIntervalSinceDate: startTime];
-        interval -= holdDuration;
+        interval = [tempTime timeIntervalSinceDate: startTime];
     }
     
     [formatter setFormat: format];

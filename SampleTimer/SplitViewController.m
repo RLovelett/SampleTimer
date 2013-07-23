@@ -27,6 +27,12 @@
     updateUI = [NSTimer scheduledTimerWithTimeInterval:(1/30) target:self selector:@selector(updateLabel) userInfo:nil repeats:YES];
 }
 
+- (void) touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
+{
+    NSLog(@"caught");
+    [model catchTemp];
+}
+
 - (void) updateLabel
 {
     display.text = [model getElapsedTime:@"ss.SSSS"];

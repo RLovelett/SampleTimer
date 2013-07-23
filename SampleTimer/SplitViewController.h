@@ -13,6 +13,7 @@
     TimeSheet* model;
     UIFont* labelFont;
     NSTimer* updateUI;
+    UIView* touchContact;
 }
 
 @property (weak, nonatomic) IBOutlet UILabel *display;

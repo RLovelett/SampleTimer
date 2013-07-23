@@ -14,6 +14,7 @@
     NSDate* startTime;
     NSDate* stopTime;
     NSMutableArray* splitTimes;
+    NSDate* tempTime;
     NSTimeIntervalFormatter* formatter;
 }
 
@@ -22,6 +23,7 @@
 - (void) start;
 - (void) addSplit;
 - (void) stop;
+- (void) catchTemp;
 
 - (NSString*) lastSplit:(NSString*)format;
 
