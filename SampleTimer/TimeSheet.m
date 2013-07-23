@@ -60,12 +60,13 @@ double const holdDuration = 0.5;
 {
     if (stopTime == NULL)
     {
-    stopTime = tempTime;
+        stopTime = tempTime;
     }
     else
     {
-        stopTime = NULL;
-        startTime = NULL;
+    stopTime = NULL;
+    startTime = NULL;
+    splitTimes = NULL;
     }
 }
 
