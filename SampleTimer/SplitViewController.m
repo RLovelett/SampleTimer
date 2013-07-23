@@ -8,10 +8,6 @@
 
 #import "SplitViewController.h"
 
-@interface SplitViewController ()
-
-@end
-
 @implementation SplitViewController
 
 @synthesize display;
@@ -45,29 +41,6 @@
     // Dispose of any resources that can be recreated.
 }
 
-/*- (IBAction) startButtonPress:(id)sender
-{
-    NSLog(@"Start Button");
-    [model start];
-}
-
-- (IBAction) splitButtonPress:(id)sender
-{
-    NSLog(@"Split Button");
-    [model addSplit];
-    display.text = [model lastSplit:@"MM:ss.SS"];
-}
-
-- (IBAction) stopButtonPress: (id)sender
-{
-    [updateUI invalidate];
-    NSLog(@"Stop Button");
-    [model stop];
-    NSString* time = [model getElapsedTime:@"MM:ss.SS"];
-    NSLog(@"[Total Elapsed] %@", time);
-    display.text = time;
-}*/
-
 - (IBAction)startOnTap:(UITapGestureRecognizer *)sender
 {
     [model start];
@@ -76,7 +49,6 @@
 
 - (IBAction)stopOnHold:(UILongPressGestureRecognizer *)sender
 {
-   //NSLog(@"[HoldState] %d", sender.state);
     if (sender.state == UIGestureRecognizerStateBegan)
     {
         [model stop];
