@@ -15,6 +15,7 @@
 @implementation SplitViewController
 
 @synthesize display;
+@synthesize millidisplay;
 
 - (void)viewDidLoad
 {
@@ -23,6 +24,7 @@
     model = [[TimeSheet alloc] init];
     labelFont = [UIFont fontWithName:@"BPmono" size:50];
     display.font = labelFont;
+    millidisplay.font = [UIFont fontWithName:@"BPmono" size:24];
 }
 
 - (void) touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
@@ -34,6 +36,7 @@
 - (void) updateLabel
 {
     display.text = [model getElapsedTime:@"MM:ss.SS"];
+    millidisplay.text = [model getElapsedTime:@"S"];
 }
 
 - (void) didReceiveMemoryWarning
@@ -82,6 +85,7 @@
         NSString* time = [model getElapsedTime:@"MM:ss.SS"];
         NSLog(@"[Total Elapsed] %@", time);
         display.text = time;
+        millidisplay.text = [model getElapsedTime:@"S"];
     }
 }
 

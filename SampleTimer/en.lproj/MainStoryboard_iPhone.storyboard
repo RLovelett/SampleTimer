@@ -18,12 +18,13 @@
                                     <constraint firstAttribute="height" constant="64" id="skO-jT-FxD"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="AvenirNext-UltraLight" family="Avenir Next" pointSize="50"/>
-                                <color key="textColor" red="0.44487572509405049" green="1" blue="0.12698086062044955" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="textColor" red="0.47925424321195964" green="0.88785475127551017" blue="0.26419492440522568" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <tableView clipsSubviews="YES" alpha="0.0" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" showsSelectionImmediatelyOnTouchBegin="NO" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="bmX-rr-QPM">
                                 <constraints>
                                     <constraint firstAttribute="height" constant="274" id="ILU-ZD-5Xy"/>
+                                    <constraint firstAttribute="width" constant="240" id="TGd-PP-0iQ"/>
                                 </constraints>
                                 <prototypes>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="gN8-u3-tkr">
@@ -56,13 +57,23 @@
                                 </prototypes>
                                 <sections/>
                             </tableView>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NGG-s1-urj">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="36" id="ZyC-R5-LIw"/>
+                                    <constraint firstAttribute="width" constant="36" id="yGk-Fc-XI2"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="AvenirNext-UltraLight" family="Avenir Next" pointSize="24"/>
+                                <color key="textColor" red="0.17016313677875197" green="0.50009964923469385" blue="0.24513675964022652" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="0.016074153274072425" green="0.11170088400210496" blue="0.125" alpha="1" colorSpace="calibratedRGB"/>
                         <gestureRecognizers/>
                         <constraints>
-                            <constraint firstItem="VAc-Cz-8xh" firstAttribute="leading" secondItem="bmX-rr-QPM" secondAttribute="leading" type="default" id="5Tg-gd-J5x"/>
-                            <constraint firstItem="VAc-Cz-8xh" firstAttribute="centerX" secondItem="3" secondAttribute="centerX" type="default" id="7I7-uC-6eU"/>
-                            <constraint firstItem="VAc-Cz-8xh" firstAttribute="trailing" secondItem="bmX-rr-QPM" secondAttribute="trailing" type="default" id="OU8-2c-6d4"/>
+                            <constraint firstAttribute="trailing" secondItem="NGG-s1-urj" secondAttribute="trailing" constant="15" id="Ti1-JU-KXN"/>
+                            <constraint firstItem="NGG-s1-urj" firstAttribute="top" secondItem="3" secondAttribute="top" constant="78" id="VDh-Y3-l6I"/>
+                            <constraint firstItem="bmX-rr-QPM" firstAttribute="centerX" secondItem="3" secondAttribute="centerX" type="default" id="WMc-xZ-Jso"/>
+                            <constraint firstItem="VAc-Cz-8xh" firstAttribute="leading" secondItem="3" secondAttribute="leading" constant="36" id="ehF-cQ-cPc"/>
                             <constraint firstItem="VAc-Cz-8xh" firstAttribute="top" secondItem="3" secondAttribute="top" constant="73" id="iA9-Y4-RYV"/>
                             <constraint firstItem="bmX-rr-QPM" firstAttribute="top" secondItem="3" secondAttribute="top" constant="234" id="qVA-ec-n8G"/>
                         </constraints>
@@ -73,6 +84,7 @@
                     </view>
                     <connections>
                         <outlet property="display" destination="VAc-Cz-8xh" id="ipK-hl-5Ep"/>
+                        <outlet property="millidisplay" destination="NGG-s1-urj" id="Ad2-ee-3bm"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4" sceneMemberID="firstResponder"/>
@@ -89,6 +101,20 @@
             </objects>
         </scene>
     </scenes>
+    <classes>
+        <class className="NSLayoutConstraint" superclassName="NSObject">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
+        </class>
+        <class className="SplitViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/SplitViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="startOnTap:" candidateClass="UITapGestureRecognizer"/>
+                <relationship kind="action" name="stopOnHold:" candidateClass="UILongPressGestureRecognizer"/>
+                <relationship kind="outlet" name="display" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="millidisplay" candidateClass="UILabel"/>
+            </relationships>
+        </class>
+    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>

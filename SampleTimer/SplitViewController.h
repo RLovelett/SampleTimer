@@ -17,6 +17,7 @@
 }
 
 @property (weak, nonatomic) IBOutlet UILabel *display;
+@property (weak, nonatomic) IBOutlet UILabel *millidisplay;
 
 //- (IBAction) startButtonPress:(id)sender;
 //- (IBAction) splitButtonPress:(id)sender;
