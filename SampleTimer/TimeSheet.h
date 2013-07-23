@@ -22,6 +22,7 @@ typedef enum {
     NSDate* stopTime;
     NSDate* tempTime;
     NSMutableArray* splitTimes;
+    
     TimeSheetActions lastAction;
     
     NSTimeIntervalFormatter* formatter;
@@ -34,6 +35,7 @@ typedef enum {
 - (void) catchTemp;
 - (void) undo;
 
+- (Boolean) isStopped;
 - (Boolean) isStarted;
 - (NSString*) lastSplit:(NSString*)format;
 - (NSString*) getElapsedTime:(NSString*)format;

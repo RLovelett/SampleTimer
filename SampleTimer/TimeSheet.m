@@ -55,6 +55,11 @@
     return lastAction != FRESH;
 }
 
+- (Boolean) isStopped
+{
+    return lastAction == STOP;
+}
+
 - (Boolean) hasSplits
 {
     return [splitTimes count] > 1;

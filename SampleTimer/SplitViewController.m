@@ -61,20 +61,24 @@
 
 - (IBAction)startOnTap:(UITapGestureRecognizer *)sender
 {
-    if ([model isStarted])
+    //Fixes taps after a stop
+    if (![model isStopped])
     {
-        [model addSplit];
-    }
-    else
-    {
-        [model start];
-    }
+        if ([model isStarted])
+        {
+            [model addSplit];
+        }
+        else
+        {
+            [model start];
+        }
     
     // Only create a new NSTimer if one does not exist
     // OR the current updateUI is invalid
-    if (![updateUI isValid])
-    {
-        updateUI = [NSTimer scheduledTimerWithTimeInterval:(1/30) target:self selector:@selector(updateLabel) userInfo:nil repeats:YES];
+        if (![updateUI isValid])
+        {
+            updateUI = [NSTimer scheduledTimerWithTimeInterval:(1/30) target:self selector:@selector(updateLabel) userInfo:nil repeats:YES];
+        }
     }
 }
 
