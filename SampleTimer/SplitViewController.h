@@ -9,7 +9,8 @@
 #import <UIKit/UIKit.h>
 #import "TimeSheet.h"
 
-@interface SplitViewController : UIViewController {
+@interface SplitViewController : UIViewController <UITableViewDataSource, UITableViewDelegate>
+{
     TimeSheet* model;
     UIFont* labelFont;
     NSTimer* updateUI;
@@ -18,6 +19,8 @@
 
 @property (weak, nonatomic) IBOutlet UILabel *display;
 @property (weak, nonatomic) IBOutlet UILabel *millidisplay;
+
+@property (weak, nonatomic) IBOutlet UITableView *splitstable;
 
 - (IBAction)startOnTap:(UITapGestureRecognizer *)sender;
 - (IBAction)stopOnHold:(UILongPressGestureRecognizer *)sender;

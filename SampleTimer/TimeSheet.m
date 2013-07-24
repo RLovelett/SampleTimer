@@ -16,6 +16,7 @@
     self = [super init];
     formatter = [[NSTimeIntervalFormatter alloc] init];
     splitTimes = [[NSMutableArray alloc] init];
+    splitIntervals = [[NSMutableArray alloc] init];
     lastAction = FRESH;
     
     return self;
@@ -41,6 +42,8 @@
 - (void) addSplit
 {
     [splitTimes addObject: tempTime];
+    [splitIntervals addObject: [self lastSplit:@"HH:mm:ss.SSS"]];
+    
     lastAction = SPLIT;
 }
 
@@ -100,7 +103,7 @@
 
 - (NSString*) lastSplit:(NSString *)format
 {
-    NSDate* now = [NSDate date];
+    NSDate* now = tempTime;
     NSDate* nextToLast;
     NSDate* last = [splitTimes lastObject];
     if ([splitTimes count] < 2) {
@@ -128,5 +131,16 @@
     [formatter setFormat: format];
     return [formatter stringFromInterval: interval];
 }
+
+- (int) splitIntervalsCount;
+{
+    return [splitIntervals count];
+}
+
+- (NSMutableArray*) getSplitIntervals
+{
+    return splitIntervals;
+}
+
 
 @end

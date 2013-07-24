@@ -12,17 +12,23 @@
 
 @synthesize display;
 @synthesize millidisplay;
+@synthesize splitstable;
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
     // Register motion ended
     [self canBecomeFirstResponder];
+    
 	// Do any additional setup after loading the view, typically from a nib.
     model = [[TimeSheet alloc] init];
     labelFont = [UIFont fontWithName:@"BPmono" size:50];
     display.font = labelFont;
     millidisplay.font = [UIFont fontWithName:@"BPmono" size:24];
+    
+    [[self splitstable] setDelegate : self];
+    [[self splitstable] setDataSource : self];
+    
 }
 
 - (BOOL)canBecomeFirstResponder {
@@ -59,7 +65,7 @@
     // Dispose of any resources that can be recreated.
 }
 
-- (IBAction)startOnTap:(UITapGestureRecognizer *)sender
+- (IBAction)startOnTap : (UITapGestureRecognizer *)sender
 {
     //Fixes taps after a stop
     if (![model isStopped])
@@ -79,10 +85,12 @@
         {
             updateUI = [NSTimer scheduledTimerWithTimeInterval:(1/30) target:self selector:@selector(updateLabel) userInfo:nil repeats:YES];
         }
+    // Update splitstable
+        [[self splitstable] reloadData];
     }
 }
 
-- (IBAction)stopOnHold:(UILongPressGestureRecognizer *)sender
+- (IBAction)stopOnHold : (UILongPressGestureRecognizer *)sender
 {
     if (sender.state == UIGestureRecognizerStateBegan)
     {
@@ -90,6 +98,36 @@
         [updateUI invalidate];
         [self updateLabel];
     }
+}
+
+#pragma tableview datasource and delegate methods
+
+- (NSInteger) numberOfSectionsInTableView: (UITableView*) tableView
+{
+    return (int)1;
+}
+
+- (NSInteger) tableView: (UITableView*) tableView numberOfRowsInSection:(NSInteger)section
+{
+    return [model splitIntervalsCount];
+}
+
+- (UITableViewCell*) tableView: (UITableView*)  tableView cellForRowAtIndexPath : (NSIndexPath *)indexPath
+{
+    static NSString* CellIdentifier = @"Cell";
+    UITableViewCell* cell = [tableView dequeueReusableCellWithIdentifier : CellIdentifier];
+    
+    if (!cell)
+    {
+        cell = [[UITableViewCell alloc] initWithStyle: UITableViewCellStyleDefault reuseIdentifier: CellIdentifier];
+    }
+    
+    UIColor * cellTextColor = [UIColor colorWithRed:61/255.0f green:103/255.0f blue:255/255.0f alpha:1.0f];
+    cell.textLabel.textColor = cellTextColor;
+    
+    cell.textLabel.text = [[model getSplitIntervals] objectAtIndex : indexPath.row];
+    
+    return cell;
 }
 
 @end
