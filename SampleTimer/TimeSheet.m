@@ -42,7 +42,7 @@
 - (void) addSplit
 {
     [splitTimes addObject: tempTime];
-    [splitIntervals addObject: [self lastSplit:@"HH:mm:ss.SSS"]];
+    [splitIntervals addObject: [self lastSplit:@"HH:MM:ss.SSS"]];
     
     lastAction = SPLIT;
 }
