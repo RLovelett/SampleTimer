@@ -83,7 +83,8 @@
     // OR the current updateUI is invalid
         if (![updateUI isValid])
         {
-            updateUI = [NSTimer scheduledTimerWithTimeInterval:(1/30) target:self selector:@selector(updateLabel) userInfo:nil repeats:YES];
+            //Funky stuff happening with interval value????
+            updateUI = [NSTimer scheduledTimerWithTimeInterval:(.005) target:self selector:@selector(updateLabel) userInfo:nil repeats:YES];
         }
     // Update splitstable
         [[self splitstable] reloadData];
@@ -94,9 +95,12 @@
 {
     if (sender.state == UIGestureRecognizerStateBegan)
     {
-        [model stop];
-        [updateUI invalidate];
-        [self updateLabel];
+        if (![model isStopped])
+        {
+            [model stop];
+            [updateUI invalidate];
+            [self updateLabel];
+        }
     }
 }
 
