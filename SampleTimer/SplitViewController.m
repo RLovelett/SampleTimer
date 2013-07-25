@@ -25,10 +25,7 @@
     labelFont = [UIFont fontWithName:@"BPmono" size:50];
     display.font = labelFont;
     millidisplay.font = [UIFont fontWithName:@"BPmono" size:24];
-    
-    [[self splitstable] setDelegate : self];
-    [[self splitstable] setDataSource : self];
-    
+    splitIntervals = [[NSMutableArray alloc] init];
 }
 
 - (BOOL)canBecomeFirstResponder {
@@ -48,7 +45,7 @@
         [model undo];
         if (![updateUI isValid])
         {
-            updateUI = [NSTimer scheduledTimerWithTimeInterval:(1/30) target:self selector:@selector(updateLabel) userInfo:nil repeats:YES];
+            updateUI = [NSTimer scheduledTimerWithTimeInterval:(1.0/30.0) target:self selector:@selector(updateLabel) userInfo:nil repeats:YES];
         }
     }
 }
@@ -73,6 +70,7 @@
         if ([model isStarted])
         {
             [model addSplit];
+            [splitIntervals addObject: [model lastSplit:@"HH:MM:ss.SSS"]];
         }
         else
         {
@@ -129,7 +127,7 @@
     UIColor * cellTextColor = [UIColor colorWithRed:61/255.0f green:103/255.0f blue:255/255.0f alpha:1.0f];
     cell.textLabel.textColor = cellTextColor;
     
-    cell.textLabel.text = [[model getSplitIntervals] objectAtIndex : indexPath.row];
+    cell.textLabel.text = [splitIntervals objectAtIndex : indexPath.row];
     
     return cell;
 }

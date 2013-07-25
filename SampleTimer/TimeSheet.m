@@ -16,7 +16,6 @@
     self = [super init];
     formatter = [[NSTimeIntervalFormatter alloc] init];
     splitTimes = [[NSMutableArray alloc] init];
-    splitIntervals = [[NSMutableArray alloc] init];
     lastAction = FRESH;
     
     return self;
@@ -42,7 +41,6 @@
 - (void) addSplit
 {
     [splitTimes addObject: tempTime];
-    [splitIntervals addObject: [self lastSplit:@"HH:MM:ss.SSS"]];
     
     lastAction = SPLIT;
 }
@@ -132,15 +130,6 @@
     return [formatter stringFromInterval: interval];
 }
 
-- (int) splitIntervalsCount;
-{
-    return [splitIntervals count];
-}
-
-- (NSMutableArray*) getSplitIntervals
-{
-    return splitIntervals;
-}
 
 
 @end
