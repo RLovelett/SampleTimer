@@ -15,8 +15,6 @@
     UIFont* labelFont;
     NSTimer* updateUI;
     UIView* touchContact;
-    NSMutableArray* splitIntervals;
-
 }
 
 @property (weak, nonatomic) IBOutlet UILabel *display;

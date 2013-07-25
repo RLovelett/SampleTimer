@@ -74,9 +74,9 @@
         {
             [model start];
         }
-    
+        
         [self validateNSTimer];
-
+        
         // Update splitstable
         [[self splitsTable] reloadData];
     }
@@ -108,29 +108,6 @@
 - (NSInteger) numberOfSectionsInTableView: (UITableView*) tableView
 {
     return (int)1;
-}
-
-- (NSInteger) tableView: (UITableView*) tableView numberOfRowsInSection:(NSInteger)section
-{
-    return [model splitIntervalsCount];
-}
-
-- (UITableViewCell*) tableView: (UITableView*)  tableView cellForRowAtIndexPath : (NSIndexPath *)indexPath
-{
-    static NSString* CellIdentifier = @"Cell";
-    UITableViewCell* cell = [tableView dequeueReusableCellWithIdentifier : CellIdentifier];
-    
-    if (!cell)
-    {
-        cell = [[UITableViewCell alloc] initWithStyle: UITableViewCellStyleDefault reuseIdentifier: CellIdentifier];
-    }
-    
-    UIColor * cellTextColor = [UIColor colorWithRed:61/255.0f green:103/255.0f blue:255/255.0f alpha:1.0f];
-    cell.textLabel.textColor = cellTextColor;
-    
-    cell.textLabel.text = [splitIntervals objectAtIndex : indexPath.row];
-    
-    return cell;
 }
 
 @end

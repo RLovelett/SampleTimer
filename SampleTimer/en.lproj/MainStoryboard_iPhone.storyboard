@@ -30,21 +30,35 @@
                                 <color key="textColor" red="0.17016313677875197" green="0.50009964923469385" blue="0.24513675964022652" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="LI7-1U-1o4">
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <tableView opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="LI7-1U-1o4">
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="285" id="IbN-yD-GBJ"/>
                                     <constraint firstAttribute="height" constant="244" id="dvH-Cc-ht8"/>
+                                    <constraint firstAttribute="width" constant="270" id="hah-gW-cws"/>
                                 </constraints>
+                                <color key="separatorColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="5PW-Sc-qi1">
+                                        <rect key="frame" x="0.0" y="22" width="270" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="0.0" y="0.0" width="270" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        </view>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                    </tableViewCell>
+                                </prototypes>
+                                <sections/>
                             </tableView>
                         </subviews>
-                        <color key="backgroundColor" red="0.016074153274072425" green="0.11170088400210496" blue="0.125" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" red="0.030605239258198684" green="0.10606696710687886" blue="0.16868622448979587" alpha="1" colorSpace="calibratedRGB"/>
                         <gestureRecognizers/>
                         <constraints>
                             <constraint firstAttribute="bottom" secondItem="LI7-1U-1o4" secondAttribute="bottom" constant="20" symbolic="YES" type="default" id="2iD-Pv-Uk2"/>
-                            <constraint firstItem="LI7-1U-1o4" firstAttribute="trailing" secondItem="NGG-s1-urj" secondAttribute="trailing" type="default" id="BjM-0C-ghE"/>
-                            <constraint firstItem="LI7-1U-1o4" firstAttribute="leading" secondItem="3" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="Szq-Iy-t2D"/>
+                            <constraint firstAttribute="trailing" secondItem="NGG-s1-urj" secondAttribute="trailing" constant="15" id="IWr-iC-mdD"/>
                             <constraint firstItem="NGG-s1-urj" firstAttribute="top" secondItem="3" secondAttribute="top" constant="78" id="VDh-Y3-l6I"/>
+                            <constraint firstItem="LI7-1U-1o4" firstAttribute="leading" secondItem="3" secondAttribute="leading" constant="26" id="WhI-f4-Hjt"/>
                             <constraint firstItem="VAc-Cz-8xh" firstAttribute="leading" secondItem="3" secondAttribute="leading" constant="36" id="ehF-cQ-cPc"/>
                             <constraint firstItem="VAc-Cz-8xh" firstAttribute="top" secondItem="3" secondAttribute="top" constant="73" id="iA9-Y4-RYV"/>
                         </constraints>
