@@ -17,6 +17,8 @@
     formatter = [[NSTimeIntervalFormatter alloc] init];
     splitTimes = [[NSMutableArray alloc] init];
     lastAction = FRESH;
+    cellIdentifier = @"TimeSheetSplitCell";
+    cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellIdentifier];
     
     return self;
 }
@@ -99,21 +101,13 @@
     }
 }
 
-- (NSString*) lastSplit:(NSString *)format
+- (NSString*) splitAtIndex:(NSIndexPath *)indexPath
 {
-    NSDate* now = tempTime;
-    NSDate* nextToLast;
-    NSDate* last = [splitTimes lastObject];
-    if ([splitTimes count] < 2) {
-        nextToLast = now;
-    } else {
-        nextToLast = [splitTimes objectAtIndex:[splitTimes count] - 2];
-    }
-    
-    NSTimeInterval interval = fabs([last timeIntervalSinceDate: nextToLast]);
-    [formatter setFormat: format];
-    
-    return [formatter stringFromInterval: interval];
+    NSDate* start = [splitTimes objectAtIndex:indexPath.row];
+    NSDate* stop = [splitTimes objectAtIndex:(indexPath.row + 1)];
+    NSTimeInterval interval = [stop timeIntervalSinceDate:start];
+    [formatter setFormat: @"MM:ss.SS"];
+    return [formatter stringFromInterval:interval];
 }
 
 - (NSString*) getElapsedTime:(NSString *)format
@@ -129,7 +123,6 @@
     [formatter setFormat: format];
     return [formatter stringFromInterval: interval];
 }
-
 
 
 @end

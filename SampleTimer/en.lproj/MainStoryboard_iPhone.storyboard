@@ -21,24 +21,6 @@
                                 <color key="textColor" red="0.72308786692561922" green="0.94897959183673475" blue="0.59977384294874281" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <tableView clipsSubviews="YES" alpha="0.0" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" showsSelectionImmediatelyOnTouchBegin="NO" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="bmX-rr-QPM">
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="274" id="ILU-ZD-5Xy"/>
-                                    <constraint firstAttribute="width" constant="240" id="TGd-PP-0iQ"/>
-                                </constraints>
-                                <prototypes>
-                                    <tableViewCell opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="gN8-u3-tkr">
-                                        <rect key="frame" x="0.0" y="22" width="240" height="44"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                            <rect key="frame" x="0.0" y="0.0" width="240" height="43"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                        </view>
-                                    </tableViewCell>
-                                </prototypes>
-                                <sections/>
-                            </tableView>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NGG-s1-urj">
                                 <constraints>
                                     <constraint firstAttribute="height" constant="36" id="ZyC-R5-LIw"/>
@@ -48,16 +30,23 @@
                                 <color key="textColor" red="0.17016313677875197" green="0.50009964923469385" blue="0.24513675964022652" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="LI7-1U-1o4">
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="285" id="IbN-yD-GBJ"/>
+                                    <constraint firstAttribute="height" constant="244" id="dvH-Cc-ht8"/>
+                                </constraints>
+                            </tableView>
                         </subviews>
                         <color key="backgroundColor" red="0.016074153274072425" green="0.11170088400210496" blue="0.125" alpha="1" colorSpace="calibratedRGB"/>
                         <gestureRecognizers/>
                         <constraints>
-                            <constraint firstAttribute="trailing" secondItem="NGG-s1-urj" secondAttribute="trailing" constant="15" id="Ti1-JU-KXN"/>
+                            <constraint firstAttribute="bottom" secondItem="LI7-1U-1o4" secondAttribute="bottom" constant="20" symbolic="YES" type="default" id="2iD-Pv-Uk2"/>
+                            <constraint firstItem="LI7-1U-1o4" firstAttribute="trailing" secondItem="NGG-s1-urj" secondAttribute="trailing" type="default" id="BjM-0C-ghE"/>
+                            <constraint firstItem="LI7-1U-1o4" firstAttribute="leading" secondItem="3" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="Szq-Iy-t2D"/>
                             <constraint firstItem="NGG-s1-urj" firstAttribute="top" secondItem="3" secondAttribute="top" constant="78" id="VDh-Y3-l6I"/>
-                            <constraint firstItem="bmX-rr-QPM" firstAttribute="centerX" secondItem="3" secondAttribute="centerX" type="default" id="WMc-xZ-Jso"/>
                             <constraint firstItem="VAc-Cz-8xh" firstAttribute="leading" secondItem="3" secondAttribute="leading" constant="36" id="ehF-cQ-cPc"/>
                             <constraint firstItem="VAc-Cz-8xh" firstAttribute="top" secondItem="3" secondAttribute="top" constant="73" id="iA9-Y4-RYV"/>
-                            <constraint firstItem="bmX-rr-QPM" firstAttribute="top" secondItem="3" secondAttribute="top" constant="234" id="qVA-ec-n8G"/>
                         </constraints>
                         <connections>
                             <outletCollection property="gestureRecognizers" destination="9ba-3J-muN" appends="YES" id="dbR-pT-cAY"/>
@@ -67,7 +56,7 @@
                     <connections>
                         <outlet property="display" destination="VAc-Cz-8xh" id="ipK-hl-5Ep"/>
                         <outlet property="millidisplay" destination="NGG-s1-urj" id="Ad2-ee-3bm"/>
-                        <outlet property="splitstable" destination="bmX-rr-QPM" id="mev-r3-7Cj"/>
+                        <outlet property="splitsTable" destination="LI7-1U-1o4" id="WKq-vB-K2r"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4" sceneMemberID="firstResponder"/>
@@ -96,7 +85,7 @@
                 <relationship kind="action" name="stopOnHold:" candidateClass="UILongPressGestureRecognizer"/>
                 <relationship kind="outlet" name="display" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="millidisplay" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="splitstable" candidateClass="UITableView"/>
+                <relationship kind="outlet" name="splitsTable" candidateClass="UITableView"/>
             </relationships>
         </class>
     </classes>
