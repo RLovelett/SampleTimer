@@ -42,7 +42,7 @@ typedef enum {
 - (Boolean) isStopped;
 - (Boolean) isStarted;
 
-- (NSString*) lastSplit:(NSString*)format;
+- (NSString*) splitAtIndex:(NSIndexPath *)indexPath;
 - (NSString*) getElapsedTime:(NSString*)format;
 
 @end

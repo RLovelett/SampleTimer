@@ -100,21 +100,13 @@
     }
 }
 
-- (NSString*) lastSplit:(NSString *)format
+- (NSString*) splitAtIndex:(NSIndexPath *)indexPath
 {
-    NSDate* now = tempTime;
-    NSDate* nextToLast;
-    NSDate* last = [splitTimes lastObject];
-    if ([splitTimes count] < 2) {
-        nextToLast = now;
-    } else {
-        nextToLast = [splitTimes objectAtIndex:[splitTimes count] - 2];
-    }
-    
-    NSTimeInterval interval = fabs([last timeIntervalSinceDate: nextToLast]);
-    [formatter setFormat: format];
-    
-    return [formatter stringFromInterval: interval];
+    NSDate* start = [splitTimes objectAtIndex:indexPath.row];
+    NSDate* stop = [splitTimes objectAtIndex:(indexPath.row + 1)];
+    NSTimeInterval interval = [stop timeIntervalSinceDate:start];
+    [formatter setFormat: @"MM:ss.SS"];
+    return [formatter stringFromInterval:interval];
 }
 
 - (NSString*) getElapsedTime:(NSString *)format
@@ -133,13 +125,17 @@
 
 - (NSInteger) tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return [splitTimes count];
+    NSInteger count = [splitTimes count];
+    if (count > 0) {
+        count -= 1;
+    }
+    return count;
 }
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     UITableViewCell* localCell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellIdentifier];
-    [localCell.textLabel setText:@"Ryan"];
+    [localCell.textLabel setText:[self splitAtIndex:indexPath]];
     return localCell;
 }
 
