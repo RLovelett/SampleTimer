@@ -73,9 +73,9 @@
         {
             [model start];
         }
-    
+        
         [self validateNSTimer];
-
+        
         // Update splitstable
         [[self splitsTable] reloadData];
     }

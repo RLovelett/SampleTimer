@@ -22,7 +22,7 @@ typedef enum {
     NSDate* stopTime;
     NSDate* tempTime;
     NSMutableArray* splitTimes;
-
+    
     // TODO Make the cellIdentifer static const
     NSString* cellIdentifier;
     UITableViewCell* cell;
