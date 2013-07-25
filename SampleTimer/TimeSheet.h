@@ -16,13 +16,16 @@ typedef enum {
     STOP
 } TimeSheetActions;
 
-@interface TimeSheet : NSObject {
+@interface TimeSheet : NSObject <UITableViewDataSource> {
     NSString* eventTitle;
     NSDate* startTime;
     NSDate* stopTime;
     NSDate* tempTime;
     NSMutableArray* splitTimes;
-    NSMutableArray* splitIntervals;
+
+    // TODO Make the cellIdentifer static const
+    NSString* cellIdentifier;
+    UITableViewCell* cell;
     
     TimeSheetActions lastAction;
     
@@ -41,7 +44,5 @@ typedef enum {
 
 - (NSString*) lastSplit:(NSString*)format;
 - (NSString*) getElapsedTime:(NSString*)format;
-- (int) splitIntervalsCount;
-- (NSMutableArray*) getSplitIntervals;
 
 @end

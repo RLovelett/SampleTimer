@@ -16,8 +16,9 @@
     self = [super init];
     formatter = [[NSTimeIntervalFormatter alloc] init];
     splitTimes = [[NSMutableArray alloc] init];
-    splitIntervals = [[NSMutableArray alloc] init];
     lastAction = FRESH;
+    cellIdentifier = @"TimeSheetSplitCell";
+    cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellIdentifier];
     
     return self;
 }
@@ -42,8 +43,6 @@
 - (void) addSplit
 {
     [splitTimes addObject: tempTime];
-    [splitIntervals addObject: [self lastSplit:@"HH:MM:ss.SSS"]];
-    
     lastAction = SPLIT;
 }
 
@@ -132,15 +131,16 @@
     return [formatter stringFromInterval: interval];
 }
 
-- (int) splitIntervalsCount;
+- (NSInteger) tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return [splitIntervals count];
+    return [splitTimes count];
 }
 
-- (NSMutableArray*) getSplitIntervals
+-(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    return splitIntervals;
+    UITableViewCell* localCell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellIdentifier];
+    [localCell.textLabel setText:@"Ryan"];
+    return localCell;
 }
-
 
 @end
