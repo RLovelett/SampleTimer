@@ -16,14 +16,16 @@ typedef enum {
     STOP
 } TimeSheetActions;
 
-@interface TimeSheet : NSObject <UITableViewDataSource>
-{
+@interface TimeSheet : NSObject <UITableViewDataSource> {
     NSString* eventTitle;
     NSDate* startTime;
     NSDate* stopTime;
     NSDate* tempTime;
     NSMutableArray* splitTimes;
-    
+
+    // TODO Make the cellIdentifer static const
+    NSString* cellIdentifier;
+    UITableViewCell* cell;
     
     TimeSheetActions lastAction;
     

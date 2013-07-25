@@ -25,7 +25,9 @@
     labelFont = [UIFont fontWithName:@"BPmono" size:50];
     display.font = labelFont;
     millidisplay.font = [UIFont fontWithName:@"BPmono" size:24];
-    splitIntervals = [[NSMutableArray alloc] init];
+    
+    [[self splitsTable] setDataSource: model];
+    
 }
 
 - (BOOL)canBecomeFirstResponder {
@@ -43,10 +45,7 @@
     if (motion == UIEventSubtypeMotionShake)
     {
         [model undo];
-        if (![updateUI isValid])
-        {
-            updateUI = [NSTimer scheduledTimerWithTimeInterval:(1.0/30.0) target:self selector:@selector(updateLabel) userInfo:nil repeats:YES];
-        }
+        [self validateNSTimer];
     }
 }
 
@@ -70,7 +69,6 @@
         if ([model isStarted])
         {
             [model addSplit];
-            [splitIntervals addObject: [model lastSplit:@"HH:MM:ss.SSS"]];
         }
         else
         {
@@ -108,6 +106,16 @@
 #pragma tableview datasource and delegate methods
 
 - (NSInteger) numberOfSectionsInTableView: (UITableView*) tableView
+{
+    return (int)1;
+}
+
+- (NSInteger) tableView: (UITableView*) tableView numberOfRowsInSection:(NSInteger)section
+{
+    return [model splitIntervalsCount];
+}
+
+- (UITableViewCell*) tableView: (UITableView*)  tableView cellForRowAtIndexPath : (NSIndexPath *)indexPath
 {
     static NSString* CellIdentifier = @"Cell";
     UITableViewCell* cell = [tableView dequeueReusableCellWithIdentifier : CellIdentifier];
