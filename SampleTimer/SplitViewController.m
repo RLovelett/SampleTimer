@@ -79,14 +79,14 @@
             [model start];
         }
     
-    // Only create a new NSTimer if one does not exist
-    // OR the current updateUI is invalid
+        // Only create a new NSTimer if one does not exist
+        // OR the current updateUI is invalid
         if (![updateUI isValid])
         {
             //Funky stuff happening with interval value????
             updateUI = [NSTimer scheduledTimerWithTimeInterval:(.005) target:self selector:@selector(updateLabel) userInfo:nil repeats:YES];
         }
-    // Update splitstable
+        // Update splitstable
         [[self splitstable] reloadData];
     }
 }
