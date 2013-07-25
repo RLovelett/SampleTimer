@@ -44,10 +44,7 @@
     if (motion == UIEventSubtypeMotionShake)
     {
         [model undo];
-        if (![updateUI isValid])
-        {
-            updateUI = [NSTimer scheduledTimerWithTimeInterval:(1/30) target:self selector:@selector(updateLabel) userInfo:nil repeats:YES];
-        }
+        [self validateNSTimer];
     }
 }
 
@@ -77,13 +74,7 @@
             [model start];
         }
     
-        // Only create a new NSTimer if one does not exist
-        // OR the current updateUI is invalid
-        if (![updateUI isValid])
-        {
-            //Funky stuff happening with interval value????
-            updateUI = [NSTimer scheduledTimerWithTimeInterval:(.005) target:self selector:@selector(updateLabel) userInfo:nil repeats:YES];
-        }
+        [self validateNSTimer];
 
         // Update splitstable
         [[self splitsTable] reloadData];
@@ -100,6 +91,14 @@
             [updateUI invalidate];
             [self updateLabel];
         }
+    }
+}
+
+- (void) validateNSTimer
+{
+    if (![updateUI isValid])
+    {
+        updateUI = [NSTimer scheduledTimerWithTimeInterval:0.005 target:self selector:@selector(updateLabel) userInfo:nil repeats:YES];
     }
 }
 
