@@ -12,7 +12,7 @@
 
 @synthesize display;
 @synthesize millidisplay;
-@synthesize splitstable;
+@synthesize splitsTable;
 
 - (void)viewDidLoad
 {
@@ -26,8 +26,7 @@
     display.font = labelFont;
     millidisplay.font = [UIFont fontWithName:@"BPmono" size:24];
     
-    [[self splitstable] setDelegate : self];
-    [[self splitstable] setDataSource : self];
+    [[self splitsTable] setDataSource: model];
     
 }
 
@@ -86,8 +85,9 @@
             //Funky stuff happening with interval value????
             updateUI = [NSTimer scheduledTimerWithTimeInterval:(.005) target:self selector:@selector(updateLabel) userInfo:nil repeats:YES];
         }
+
         // Update splitstable
-        [[self splitstable] reloadData];
+        [[self splitsTable] reloadData];
     }
 }
 
@@ -109,29 +109,6 @@
 - (NSInteger) numberOfSectionsInTableView: (UITableView*) tableView
 {
     return (int)1;
-}
-
-- (NSInteger) tableView: (UITableView*) tableView numberOfRowsInSection:(NSInteger)section
-{
-    return [model splitIntervalsCount];
-}
-
-- (UITableViewCell*) tableView: (UITableView*)  tableView cellForRowAtIndexPath : (NSIndexPath *)indexPath
-{
-    static NSString* CellIdentifier = @"Cell";
-    UITableViewCell* cell = [tableView dequeueReusableCellWithIdentifier : CellIdentifier];
-    
-    if (!cell)
-    {
-        cell = [[UITableViewCell alloc] initWithStyle: UITableViewCellStyleDefault reuseIdentifier: CellIdentifier];
-    }
-    
-    UIColor * cellTextColor = [UIColor colorWithRed:61/255.0f green:103/255.0f blue:255/255.0f alpha:1.0f];
-    cell.textLabel.textColor = cellTextColor;
-    
-    cell.textLabel.text = [[model getSplitIntervals] objectAtIndex : indexPath.row];
-    
-    return cell;
 }
 
 @end
