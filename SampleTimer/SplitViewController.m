@@ -46,6 +46,9 @@
     {
         [model undo];
         [self validateNSTimer];
+        [splitsTable reloadData];
+        splitsTable.userInteractionEnabled = NO;
+        splitsTable.scrollEnabled = NO;
     }
 }
 
@@ -91,6 +94,8 @@
             [model stop];
             [updateUI invalidate];
             [self updateLabel];
+            splitsTable.userInteractionEnabled = YES;
+            splitsTable.scrollEnabled = YES;
         }
     }
 }
@@ -99,7 +104,7 @@
 {
     if (![updateUI isValid])
     {
-        updateUI = [NSTimer scheduledTimerWithTimeInterval:0.005 target:self selector:@selector(updateLabel) userInfo:nil repeats:YES];
+        updateUI = [NSTimer scheduledTimerWithTimeInterval:0.04167 target:self selector:@selector(updateLabel) userInfo:nil repeats:YES];
     }
 }
 
