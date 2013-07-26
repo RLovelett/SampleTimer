@@ -130,11 +130,12 @@
     }
 }
 
-#pragma tableview datasource and delegate methods
-
-- (NSInteger) numberOfSectionsInTableView: (UITableView*) tableView
+- (void) validateNSTimer
 {
-    return (int)1;
+    if (![updateUI isValid])
+    {
+        updateUI = [NSTimer scheduledTimerWithTimeInterval:0.005 target:self selector:@selector(updateLabel) userInfo:nil repeats:YES];
+    }
 }
 
 @end

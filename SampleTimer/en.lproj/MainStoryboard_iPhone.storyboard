@@ -88,6 +88,21 @@
             <point key="canvasLocation" x="-95" y="9"/>
         </scene>
     </scenes>
+    <classes>
+        <class className="NSLayoutConstraint" superclassName="NSObject">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
+        </class>
+        <class className="SplitViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/SplitViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="startOnTap:" candidateClass="UITapGestureRecognizer"/>
+                <relationship kind="action" name="stopOnHold:" candidateClass="UILongPressGestureRecognizer"/>
+                <relationship kind="outlet" name="display" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="millidisplay" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="splitsTable" candidateClass="UITableView"/>
+            </relationships>
+        </class>
+    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>
