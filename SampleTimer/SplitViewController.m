@@ -29,6 +29,7 @@
     [[self splitsTable] setDataSource: model];
     splitsTable.rowHeight = 24.0;
     
+    undoAlert = [[UIAlertView alloc] initWithTitle:@"SHAKEN" message:@"UNDO?" delegate:self cancelButtonTitle:@"CANCEL" otherButtonTitles:@"OK", nil];
 }
 
 - (BOOL)canBecomeFirstResponder
@@ -64,8 +65,6 @@
 {
     if (motion == UIEventSubtypeMotionShake)
     {
-        UIAlertView* undoAlert = [[UIAlertView alloc] initWithTitle:@"SHAKEN" message:@"UNDO?" delegate:self cancelButtonTitle:@"CANCEL" otherButtonTitles:@"OK", nil];
-        
         [undoAlert show];
     }
 }

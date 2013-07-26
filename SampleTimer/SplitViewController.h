@@ -15,6 +15,7 @@
     UIFont* labelFont;
     NSTimer* updateUI;
     UIView* touchContact;
+    UIAlertView* undoAlert;
 }
 
 @property (weak, nonatomic) IBOutlet UILabel *display;
