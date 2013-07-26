@@ -127,11 +127,4 @@
     }
 }
 
-#pragma tableview datasource and delegate methods
-
-- (NSInteger) numberOfSectionsInTableView: (UITableView*) tableView
-{
-    return (int)1;
-}
-
 @end
