@@ -84,7 +84,6 @@
 
 - (IBAction)startOnTap : (UITapGestureRecognizer *)sender
 {
-    //Fixes taps after a stop
     if (![model isStopped])
     {
         if ([model isStarted])
@@ -98,7 +97,6 @@
         
         [self validateNSTimer];
         
-        // Update splitstable
         [[self splitsTable] reloadData];
     }
 }
@@ -130,12 +128,11 @@
     }
 }
 
-- (void) validateNSTimer
+#pragma tableview datasource and delegate methods
+
+- (NSInteger) numberOfSectionsInTableView: (UITableView*) tableView
 {
-    if (![updateUI isValid])
-    {
-        updateUI = [NSTimer scheduledTimerWithTimeInterval:0.005 target:self selector:@selector(updateLabel) userInfo:nil repeats:YES];
-    }
+    return (int)1;
 }
 
 @end

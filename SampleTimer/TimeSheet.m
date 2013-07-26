@@ -142,7 +142,7 @@
     
     UIFont* fontBPmono = [UIFont fontWithName:@"BPmono" size:21.0];
     localCell.textLabel.font = fontBPmono;
-    
+
     return localCell;
 }
 
