@@ -27,10 +27,12 @@
     millidisplay.font = [UIFont fontWithName:@"BPmono" size:24];
     
     [[self splitsTable] setDataSource: model];
+    splitsTable.rowHeight = 24.0;
     
 }
 
-- (BOOL)canBecomeFirstResponder {
+- (BOOL)canBecomeFirstResponder
+{
     return YES;
 }
 
@@ -40,15 +42,31 @@
     [model catchTemp];
 }
 
-- (void) motionEnded:(UIEventSubtype)motion withEvent:(UIEvent *)event
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
 {
-    if (motion == UIEventSubtypeMotionShake)
+    NSString *title = [alertView buttonTitleAtIndex:buttonIndex];
+    if([title isEqualToString:@"OK"])
     {
+        NSLog(@"OK was selected.");
         [model undo];
         [self validateNSTimer];
         [splitsTable reloadData];
         splitsTable.userInteractionEnabled = NO;
         splitsTable.scrollEnabled = NO;
+    }
+    else if([title isEqualToString:@"CANCEL"])
+    {
+        NSLog(@"CANCEL was selected.");
+    }
+}
+
+- (void) motionEnded:(UIEventSubtype)motion withEvent:(UIEvent *)event
+{
+    if (motion == UIEventSubtypeMotionShake)
+    {
+        UIAlertView* undoAlert = [[UIAlertView alloc] initWithTitle:@"SHAKEN" message:@"UNDO?" delegate:self cancelButtonTitle:@"CANCEL" otherButtonTitles:@"OK", nil];
+        
+        [undoAlert show];
     }
 }
 
@@ -94,6 +112,10 @@
             [model stop];
             [updateUI invalidate];
             [self updateLabel];
+            
+            display.textColor = [UIColor colorWithRed:237/255.0f green:102/255.0f blue:75/255.0f alpha:1.0f];
+            millidisplay.textColor = [UIColor colorWithRed:204/255.0f green:64/255.0f blue:36/255.0f alpha:1.0f];
+            
             splitsTable.userInteractionEnabled = YES;
             splitsTable.scrollEnabled = YES;
         }

@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "TimeSheet.h"
 
-@interface SplitViewController : UIViewController
+@interface SplitViewController : UIViewController <UIAlertViewDelegate>
 {
     TimeSheet* model;
     UIFont* labelFont;
