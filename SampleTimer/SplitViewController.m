@@ -22,12 +22,13 @@
 
     // Do any additional setup after loading the view, typically from a nib.
     model = [[TimeSheet alloc] init];
-    labelFont = [UIFont fontWithName:@"BPmono" size:50];
-    display.font = labelFont;
-    millidisplay.font = [UIFont fontWithName:@"BPmono" size:24];
+
+    //labelFont = [UIFont fontWithName:@"BPmono" size:50];
+    //display.font = labelFont;
+    //millidisplay.font = [UIFont fontWithName:@"BPmono" size:24];
 
     [[self splitsTable] setDataSource:model];
-    splitsTable.rowHeight = 24.0;
+    splitsTable.rowHeight = 28.0;
 
     undoAlert = [[UIAlertView alloc] initWithTitle:@"SHAKEN" message:@"UNDO?" delegate:self cancelButtonTitle:@"CANCEL" otherButtonTitles:@"OK", nil];
 }
@@ -117,6 +118,11 @@
             splitsTable.scrollEnabled = YES;
         }
     }
+}
+
+- (IBAction) gotoDataManager:(UISwipeGestureRecognizer*) sender
+{
+    NSLog(@"Swiped!");
 }
 
 - (void) validateNSTimer

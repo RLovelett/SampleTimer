@@ -26,4 +26,6 @@
 
 - (IBAction) stopOnHold:(UILongPressGestureRecognizer*) sender;
 
+- (IBAction) gotoDataManager:(UISwipeGestureRecognizer*) sender;
+
 @end
