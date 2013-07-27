@@ -51,6 +51,13 @@
     {
         NSLog(@"OK was selected.");
         [model undo];
+        
+        if ([model isStarted])
+        {
+            display.textColor = [UIColor colorWithRed:183/255.0f green:242/255.0f blue:152/255.0f alpha:1.0f];
+            millidisplay.textColor = [UIColor colorWithRed:43/255.0f green:127/255.0f blue:62/255.0f alpha:1.0f];
+        }
+
         [self validateNSTimer];
         [splitsTable reloadData];
         splitsTable.userInteractionEnabled = NO;
