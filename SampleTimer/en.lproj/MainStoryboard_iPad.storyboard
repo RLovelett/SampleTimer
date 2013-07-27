@@ -1,23 +1,109 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="2519" systemVersion="12A206j" targetRuntime="iOS.CocoaTouch.iPad" propertyAccessControl="none" useAutolayout="YES" initialViewController="2">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="3084" systemVersion="12E55" targetRuntime="iOS.CocoaTouch.iPad" propertyAccessControl="none" useAutolayout="YES" initialViewController="Eh9-a4-q5D">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="1856"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="2083"/>
     </dependencies>
     <scenes>
-        <!--class Prefix:identifier View Controller-->
-        <scene sceneID="4">
+        <!--Split View Controller-->
+        <scene sceneID="4oy-89-nUL">
             <objects>
-                <viewController id="2" customClass="SplitViewController" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="5">
+                <viewController id="Eh9-a4-q5D" customClass="SplitViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="I2u-Jo-sap">
                         <rect key="frame" x="0.0" y="20" width="768" height="1004"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="00:00.00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VON-0i-0gr" userLabel="display">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="64" id="Nx2-X3-r2R"/>
+                                    <constraint firstAttribute="width" constant="240" id="nkR-Ms-San"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="AvenirNext-UltraLight" family="Avenir Next" pointSize="50"/>
+                                <color key="textColor" red="0.72308786690000004" green="0.94897959180000002" blue="0.59977384290000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8ra-pL-0lt">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="36" id="5ZG-LE-tqm"/>
+                                    <constraint firstAttribute="width" constant="36" id="PFf-XS-rAa"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="AvenirNext-UltraLight" family="Avenir Next" pointSize="24"/>
+                                <color key="textColor" red="0.1701631368" green="0.50009964920000005" blue="0.2451367596" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <tableView opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" scrollEnabled="NO" indicatorStyle="white" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" showsSelectionImmediatelyOnTouchBegin="NO" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="qt1-nB-GCb">
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="520" id="TrL-PM-dgk"/>
+                                    <constraint firstAttribute="width" constant="270" id="eWJ-bH-wJ5"/>
+                                </constraints>
+                                <color key="separatorColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="LsU-Yh-BYs">
+                                        <rect key="frame" x="0.0" y="22" width="270" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="0.0" y="0.0" width="270" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        </view>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                    </tableViewCell>
+                                </prototypes>
+                                <sections/>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.03060523926" green="0.10606696710000001" blue="0.16868622450000001" alpha="1" colorSpace="calibratedRGB"/>
+                        <gestureRecognizers/>
+                        <constraints>
+                            <constraint firstItem="VON-0i-0gr" firstAttribute="top" secondItem="I2u-Jo-sap" secondAttribute="top" constant="78" id="56f-ig-l5X"/>
+                            <constraint firstAttribute="trailing" secondItem="8ra-pL-0lt" secondAttribute="trailing" constant="235" id="5Q1-pc-wSg"/>
+                            <constraint firstItem="VON-0i-0gr" firstAttribute="centerX" secondItem="qt1-nB-GCb" secondAttribute="centerX" type="default" id="JGQ-lt-wj3"/>
+                            <constraint firstItem="qt1-nB-GCb" firstAttribute="top" secondItem="I2u-Jo-sap" secondAttribute="top" constant="376" id="O1t-uI-PpZ"/>
+                            <constraint firstItem="qt1-nB-GCb" firstAttribute="centerX" secondItem="I2u-Jo-sap" secondAttribute="centerX" type="default" id="Ox7-4E-XJa"/>
+                            <constraint firstItem="8ra-pL-0lt" firstAttribute="top" secondItem="I2u-Jo-sap" secondAttribute="top" constant="84" id="zle-1P-tRc"/>
+                        </constraints>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="Lab-QU-s1o" appends="YES" id="CXC-7m-Kcl"/>
+                            <outletCollection property="gestureRecognizers" destination="gjA-jG-KTd" appends="YES" id="6SP-Io-gQD"/>
+                        </connections>
                     </view>
+                    <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="blackTranslucent"/>
+                    <connections>
+                        <outlet property="display" destination="VON-0i-0gr" id="dSk-W2-bGe"/>
+                        <outlet property="millidisplay" destination="8ra-pL-0lt" id="4nT-OR-Mqe"/>
+                        <outlet property="splitsTable" destination="qt1-nB-GCb" id="efQ-fM-jP0"/>
+                    </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="3" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="JvR-eJ-7ca" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="Lab-QU-s1o">
+                    <connections>
+                        <action selector="startOnTap:" destination="Eh9-a4-q5D" id="z8r-b4-iyy"/>
+                    </connections>
+                </tapGestureRecognizer>
+                <pongPressGestureRecognizer allowableMovement="10" minimumPressDuration="0.5" id="gjA-jG-KTd">
+                    <connections>
+                        <action selector="stopOnHold:" destination="Eh9-a4-q5D" id="dXw-Fm-zNJ"/>
+                    </connections>
+                </pongPressGestureRecognizer>
             </objects>
+            <point key="canvasLocation" x="215" y="-322"/>
         </scene>
     </scenes>
+    <classes>
+        <class className="NSLayoutConstraint" superclassName="NSObject">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
+        </class>
+        <class className="SplitViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/SplitViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="startOnTap:" candidateClass="UITapGestureRecognizer"/>
+                <relationship kind="action" name="stopOnHold:" candidateClass="UILongPressGestureRecognizer"/>
+                <relationship kind="outlet" name="display" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="millidisplay" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="splitsTable" candidateClass="UITableView"/>
+            </relationships>
+        </class>
+    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar" statusBarStyle="blackTranslucent"/>
         <simulatedOrientationMetrics key="orientation"/>
