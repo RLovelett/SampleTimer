@@ -103,12 +103,22 @@
     }
 }
 
-- (NSString*) splitAtIndex:(NSIndexPath*) indexPath
+- (NSString*) lapAtIndex:(NSIndexPath*) indexPath
 {
     NSDate* start = [splitTimes objectAtIndex:indexPath.row];
     NSDate* stop = [splitTimes objectAtIndex:(indexPath.row + 1)];
     NSTimeInterval interval = [stop timeIntervalSinceDate:start];
-    [formatter setFormat:@"MM:ss.SS"];
+
+    [formatter setFormat:@"MM:ss.SSS"];
+    return [formatter stringFromInterval:interval];
+}
+
+- (NSString*) splitAtIndex:(NSIndexPath*) indexPath
+{
+    NSDate* stop = [splitTimes objectAtIndex:indexPath.row];
+    NSTimeInterval interval = [stop timeIntervalSinceDate:startTime];
+
+    [formatter setFormat:@"MM:ss.SSS"];
     return [formatter stringFromInterval:interval];
 }
 
@@ -141,14 +151,16 @@
 
 - (UITableViewCell*) tableView:(UITableView*) tableView cellForRowAtIndexPath:(NSIndexPath*) indexPath
 {
-    UITableViewCell* localCell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellIdentifier];
-    [localCell.textLabel setText:[self splitAtIndex:indexPath]];
+    UITableViewCell* localCell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:cellIdentifier];
+    [localCell.textLabel setText:[self lapAtIndex:indexPath]];
+    [localCell.detailTextLabel setText:[self splitAtIndex:indexPath]];
 
-    UIColor* color = [UIColor colorWithRed:102 / 255.0f green:154 / 255.0f blue:249 / 255.0f alpha:1.0f];
-    localCell.textLabel.textColor = color;
+    localCell.textLabel.textColor = [UIColor colorWithRed:102 / 255.0f green:154 / 255.0f blue:249 / 255.0f alpha:1.0f];
+    localCell.detailTextLabel.textColor = [UIColor colorWithRed:183 / 255.0f green:206 / 255.0f blue:247 / 255.0f alpha:1.0f];
 
-    //UIFont* fontAvenirLight = [UIFont fontWithName:@"Avenir Next Ultra Light" size:21.0];
-    //localCell.textLabel.font = fontAvenirLight;
+    UIFont* fontAvenirLight = [UIFont fontWithName:@"Avenir Next Ultra Light" size:24.0];
+    localCell.textLabel.font = fontAvenirLight;
+    localCell.detailTextLabel.font = fontAvenirLight;
 
     return localCell;
 }

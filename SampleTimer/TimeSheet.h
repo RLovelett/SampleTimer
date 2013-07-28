@@ -50,6 +50,8 @@ typedef enum
 
 - (Boolean) isStarted;
 
+- (NSString*) lapAtIndex:(NSIndexPath*) indexPath;
+
 - (NSString*) splitAtIndex:(NSIndexPath*) indexPath;
 
 - (NSString*) getElapsedTime:(NSString*) format;
