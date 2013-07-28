@@ -11,9 +11,10 @@
 #import "SplitAppDelegate.h"
 #import "TimeSheet.h"
 
-int main(int argc, char *argv[])
+int main(int argc, char* argv[])
 {
-    @autoreleasepool {
+    @autoreleasepool
+    {
         return UIApplicationMain(argc, argv, nil, NSStringFromClass([SplitAppDelegate class]));
     }
 }

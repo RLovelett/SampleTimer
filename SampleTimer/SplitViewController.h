@@ -18,11 +18,12 @@
     UIAlertView* undoAlert;
 }
 
-@property (weak, nonatomic) IBOutlet UILabel *display;
-@property (weak, nonatomic) IBOutlet UILabel *millidisplay;
-@property (weak, nonatomic) IBOutlet UITableView *splitsTable;
+@property(weak, nonatomic) IBOutlet UILabel* display;
+@property(weak, nonatomic) IBOutlet UILabel* millidisplay;
+@property(weak, nonatomic) IBOutlet UITableView* splitsTable;
 
-- (IBAction)startOnTap:(UITapGestureRecognizer *)sender;
-- (IBAction)stopOnHold:(UILongPressGestureRecognizer *)sender;
+- (IBAction) startOnTap:(UITapGestureRecognizer*) sender;
+
+- (IBAction) stopOnHold:(UILongPressGestureRecognizer*) sender;
 
 @end

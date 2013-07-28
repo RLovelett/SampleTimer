@@ -19,7 +19,7 @@
     lastAction = FRESH;
     cellIdentifier = @"TimeSheetSplitCell";
     cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellIdentifier];
-    
+
     return self;
 }
 
@@ -28,7 +28,7 @@
     tempTime = [NSDate date];
 }
 
-- (void) setTitle:(NSString *)newTitle
+- (void) setTitle:(NSString*) newTitle
 {
     eventTitle = newTitle;
 }
@@ -37,12 +37,12 @@
 {
     lastAction = START;
     startTime = tempTime;
-    [splitTimes addObject: tempTime];
+    [splitTimes addObject:tempTime];
 }
 
 - (void) addSplit
 {
-    [splitTimes addObject: tempTime];
+    [splitTimes addObject:tempTime];
     lastAction = SPLIT;
 }
 
@@ -69,7 +69,8 @@
 
 - (void) undo
 {
-    switch (lastAction) {
+    switch (lastAction)
+    {
         case START:
             lastAction = FRESH;
             startTime = nil;
@@ -77,7 +78,8 @@
             break;
         case SPLIT:
             [splitTimes removeLastObject];
-            if ([self hasSplits]) {
+            if ([self hasSplits])
+            {
                 lastAction = SPLIT;
             }
             else
@@ -87,7 +89,8 @@
             break;
         case STOP:
             stopTime = nil;
-            if ([self hasSplits]) {
+            if ([self hasSplits])
+            {
                 lastAction = SPLIT;
             }
             else
@@ -100,46 +103,50 @@
     }
 }
 
-- (NSString*) splitAtIndex:(NSIndexPath *)indexPath
+- (NSString*) splitAtIndex:(NSIndexPath*) indexPath
 {
     NSDate* start = [splitTimes objectAtIndex:indexPath.row];
     NSDate* stop = [splitTimes objectAtIndex:(indexPath.row + 1)];
     NSTimeInterval interval = [stop timeIntervalSinceDate:start];
-    [formatter setFormat: @"MM:ss.SS"];
+    [formatter setFormat:@"MM:ss.SS"];
     return [formatter stringFromInterval:interval];
 }
 
-- (NSString*) getElapsedTime:(NSString *)format
+- (NSString*) getElapsedTime:(NSString*) format
 {
     NSTimeInterval interval = 0;
-    if (stopTime == NULL) {
+    if (stopTime == NULL)
+    {
         NSDate* now = [NSDate date];
-        interval = [now timeIntervalSinceDate: startTime];
-    } else {
-        interval = [tempTime timeIntervalSinceDate: startTime];
+        interval = [now timeIntervalSinceDate:startTime];
     }
-    
-    [formatter setFormat: format];
-    return [formatter stringFromInterval: interval];
+    else
+    {
+        interval = [tempTime timeIntervalSinceDate:startTime];
+    }
+
+    [formatter setFormat:format];
+    return [formatter stringFromInterval:interval];
 }
 
-- (NSInteger) tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+- (NSInteger) tableView:(UITableView*) tableView numberOfRowsInSection:(NSInteger) section
 {
     NSInteger count = [splitTimes count];
-    if (count > 0) {
+    if (count > 0)
+    {
         count -= 1;
     }
     return count;
 }
 
--(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+- (UITableViewCell*) tableView:(UITableView*) tableView cellForRowAtIndexPath:(NSIndexPath*) indexPath
 {
     UITableViewCell* localCell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellIdentifier];
     [localCell.textLabel setText:[self splitAtIndex:indexPath]];
-    
-    UIColor* color = [UIColor colorWithRed:102/255.0f green:154/255.0f blue:249/255.0f alpha:1.0f];
+
+    UIColor* color = [UIColor colorWithRed:102 / 255.0f green:154 / 255.0f blue:249 / 255.0f alpha:1.0f];
     localCell.textLabel.textColor = color;
-    
+
     UIFont* fontBPmono = [UIFont fontWithName:@"BPmono" size:21.0];
     localCell.textLabel.font = fontBPmono;
 

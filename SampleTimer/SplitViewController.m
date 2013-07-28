@@ -14,39 +14,39 @@
 @synthesize millidisplay;
 @synthesize splitsTable;
 
-- (void)viewDidLoad
+- (void) viewDidLoad
 {
     [super viewDidLoad];
     // Register motion ended
     [self canBecomeFirstResponder];
-    
-	// Do any additional setup after loading the view, typically from a nib.
+
+    // Do any additional setup after loading the view, typically from a nib.
     model = [[TimeSheet alloc] init];
     labelFont = [UIFont fontWithName:@"BPmono" size:50];
     display.font = labelFont;
     millidisplay.font = [UIFont fontWithName:@"BPmono" size:24];
-    
-    [[self splitsTable] setDataSource: model];
+
+    [[self splitsTable] setDataSource:model];
     splitsTable.rowHeight = 24.0;
-    
+
     undoAlert = [[UIAlertView alloc] initWithTitle:@"SHAKEN" message:@"UNDO?" delegate:self cancelButtonTitle:@"CANCEL" otherButtonTitles:@"OK", nil];
 }
 
-- (BOOL)canBecomeFirstResponder
+- (BOOL) canBecomeFirstResponder
 {
     return YES;
 }
 
-- (void) touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
+- (void) touchesBegan:(NSSet*) touches withEvent:(UIEvent*) event
 {
     NSLog(@"caught");
     [model catchTemp];
 }
 
-- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
+- (void) alertView:(UIAlertView*) alertView clickedButtonAtIndex:(NSInteger) buttonIndex
 {
-    NSString *title = [alertView buttonTitleAtIndex:buttonIndex];
-    if([title isEqualToString:@"OK"])
+    NSString* title = [alertView buttonTitleAtIndex:buttonIndex];
+    if ([title isEqualToString:@"OK"])
     {
         NSLog(@"OK was selected.");
         [model undo];
@@ -55,13 +55,13 @@
         splitsTable.userInteractionEnabled = NO;
         splitsTable.scrollEnabled = NO;
     }
-    else if([title isEqualToString:@"CANCEL"])
+    else if ([title isEqualToString:@"CANCEL"])
     {
         NSLog(@"CANCEL was selected.");
     }
 }
 
-- (void) motionEnded:(UIEventSubtype)motion withEvent:(UIEvent *)event
+- (void) motionEnded:(UIEventSubtype) motion withEvent:(UIEvent*) event
 {
     if (motion == UIEventSubtypeMotionShake)
     {
@@ -81,7 +81,7 @@
     // Dispose of any resources that can be recreated.
 }
 
-- (IBAction)startOnTap : (UITapGestureRecognizer *)sender
+- (IBAction) startOnTap :(UITapGestureRecognizer*) sender
 {
     if (![model isStopped])
     {
@@ -93,14 +93,14 @@
         {
             [model start];
         }
-        
+
         [self validateNSTimer];
-        
+
         [[self splitsTable] reloadData];
     }
 }
 
-- (IBAction)stopOnHold : (UILongPressGestureRecognizer *)sender
+- (IBAction) stopOnHold :(UILongPressGestureRecognizer*) sender
 {
     if (sender.state == UIGestureRecognizerStateBegan)
     {
@@ -109,10 +109,10 @@
             [model stop];
             [updateUI invalidate];
             [self updateLabel];
-            
-            display.textColor = [UIColor colorWithRed:237/255.0f green:102/255.0f blue:75/255.0f alpha:1.0f];
-            millidisplay.textColor = [UIColor colorWithRed:204/255.0f green:64/255.0f blue:36/255.0f alpha:1.0f];
-            
+
+            display.textColor = [UIColor colorWithRed:237 / 255.0f green:102 / 255.0f blue:75 / 255.0f alpha:1.0f];
+            millidisplay.textColor = [UIColor colorWithRed:204 / 255.0f green:64 / 255.0f blue:36 / 255.0f alpha:1.0f];
+
             splitsTable.userInteractionEnabled = YES;
             splitsTable.scrollEnabled = YES;
         }

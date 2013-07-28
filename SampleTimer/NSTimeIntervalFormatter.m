@@ -11,12 +11,13 @@
 
 @implementation NSTimeIntervalFormatter
 
-- (id) init {
+- (id) init
+{
     self = [super init];
 
-    NSError *error = nil;
+    NSError* error = nil;
 
-    hourRegex = [NSRegularExpression regularExpressionWithPattern:@"H+" options:0 error: &error];
+    hourRegex = [NSRegularExpression regularExpressionWithPattern:@"H+" options:0 error:&error];
     minuteRegex = [NSRegularExpression regularExpressionWithPattern:@"M+" options:0 error:&error];
     secondRegex = [NSRegularExpression regularExpressionWithPattern:@"s+" options:0 error:&error];
     milliSecondRegex = [NSRegularExpression regularExpressionWithPattern:@"S+" options:0 error:&error];
@@ -24,7 +25,7 @@
     return self;
 }
 
-- (NSString*) stringFromInterval: (NSTimeInterval) interval
+- (NSString*) stringFromInterval:(NSTimeInterval) interval
 {
     uint wholeSeconds = (uint) interval;
     uint milliseconds = (uint) (fmod(interval, 1.0) * milliSecondMultiplier);
@@ -41,7 +42,7 @@
     return message;
 }
 
-- (void) setFormat: (NSString*) format
+- (void) setFormat:(NSString*) format
 {
     timeFormat = format;
     timeFormatRange = NSMakeRange(0, [timeFormat length]);
@@ -54,11 +55,12 @@
 - (void) extractHourFormat
 {
     NSUInteger numberOfMatches = [hourRegex
-            numberOfMatchesInString: timeFormat
-                            options: 0
-                              range: timeFormatRange];
+            numberOfMatchesInString:timeFormat
+                            options:0
+                              range:timeFormatRange];
 
-    if (numberOfMatches > 0) {
+    if (numberOfMatches > 0)
+    {
         NSTextCheckingResult* match = [hourRegex
                 firstMatchInString:timeFormat
                            options:0
@@ -77,11 +79,12 @@
 - (void) extractMinuteFormat
 {
     NSUInteger numberOfMatches = [minuteRegex
-            numberOfMatchesInString: timeFormat
-                            options: 0
-                              range: timeFormatRange];
+            numberOfMatchesInString:timeFormat
+                            options:0
+                              range:timeFormatRange];
 
-    if (numberOfMatches > 0) {
+    if (numberOfMatches > 0)
+    {
         NSTextCheckingResult* match = [minuteRegex
                 firstMatchInString:timeFormat
                            options:0
@@ -100,11 +103,12 @@
 - (void) extractSecondFormat
 {
     NSUInteger numberOfMatches = [secondRegex
-            numberOfMatchesInString: timeFormat
-                            options: 0
-                              range: timeFormatRange];
+            numberOfMatchesInString:timeFormat
+                            options:0
+                              range:timeFormatRange];
 
-    if (numberOfMatches > 0) {
+    if (numberOfMatches > 0)
+    {
         NSTextCheckingResult* match = [secondRegex
                 firstMatchInString:timeFormat
                            options:0
@@ -123,11 +127,12 @@
 - (void) extractMilliSecondFormat
 {
     NSUInteger numberOfMatches = [milliSecondRegex
-            numberOfMatchesInString: timeFormat
-                            options: 0
-                              range: timeFormatRange];
+            numberOfMatchesInString:timeFormat
+                            options:0
+                              range:timeFormatRange];
 
-    if (numberOfMatches > 0) {
+    if (numberOfMatches > 0)
+    {
         NSTextCheckingResult* match = [milliSecondRegex
                 firstMatchInString:timeFormat
                            options:0
