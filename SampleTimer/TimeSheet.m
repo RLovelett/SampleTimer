@@ -115,7 +115,7 @@
 
 - (NSString*) splitAtIndex:(NSIndexPath*) indexPath
 {
-    NSDate* stop = [splitTimes objectAtIndex:indexPath.row];
+    NSDate* stop = [splitTimes objectAtIndex:indexPath.row + 1];
     NSTimeInterval interval = [stop timeIntervalSinceDate:startTime];
 
     [formatter setFormat:@"MM:ss.SSS"];
