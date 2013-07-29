@@ -150,7 +150,7 @@
                         <color key="backgroundColor" red="0.074246941348767109" green="0.085765449530355031" blue="0.1071428571428571" alpha="1" colorSpace="calibratedRGB"/>
                         <gestureRecognizers/>
                         <constraints>
-                            <constraint firstAttribute="trailing" secondItem="wj2-Us-peV" secondAttribute="trailing" constant="62" id="1SF-N7-FvG"/>
+                            <constraint firstAttribute="trailing" secondItem="wj2-Us-peV" secondAttribute="trailing" constant="70" type="user" id="1SF-N7-FvG"/>
                             <constraint firstItem="wj2-Us-peV" firstAttribute="top" secondItem="lC1-K0-1nM" secondAttribute="top" type="default" id="2b6-1w-lqa"/>
                             <constraint firstItem="LI7-1U-1o4" firstAttribute="top" secondItem="lC1-K0-1nM" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="3ao-oV-gj2"/>
                             <constraint firstAttribute="bottom" secondItem="LI7-1U-1o4" secondAttribute="bottom" constant="25" type="user" id="7cs-Z3-dLm"/>
@@ -162,7 +162,7 @@
                             <constraint firstAttribute="trailing" secondItem="NGG-s1-urj" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="Q2w-23-JFq"/>
                             <constraint firstItem="LI7-1U-1o4" firstAttribute="top" secondItem="3" secondAttribute="top" constant="198" type="user" id="VZy-0d-o64"/>
                             <constraint firstItem="LI7-1U-1o4" firstAttribute="leading" secondItem="3" secondAttribute="leading" constant="36" type="user" id="bb8-KF-StZ"/>
-                            <constraint firstItem="lC1-K0-1nM" firstAttribute="leading" secondItem="3" secondAttribute="leading" constant="63" id="kLv-ad-pWe"/>
+                            <constraint firstItem="lC1-K0-1nM" firstAttribute="leading" secondItem="3" secondAttribute="leading" constant="73" type="user" id="kLv-ad-pWe"/>
                             <constraint firstItem="lC1-K0-1nM" firstAttribute="baseline" secondItem="wj2-Us-peV" secondAttribute="baseline" type="default" id="nRa-TP-qjb"/>
                             <constraint firstItem="LI7-1U-1o4" firstAttribute="leading" secondItem="VAc-Cz-8xh" secondAttribute="leading" type="user" id="vcc-he-dQW"/>
                         </constraints>
