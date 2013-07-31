@@ -23,6 +23,7 @@ typedef enum
     NSDate* startTime;
     NSDate* stopTime;
     NSDate* tempTime;
+    NSDate* createdAt;
     NSMutableArray* splitTimes;
 
     // TODO Make the cellIdentifer static const
