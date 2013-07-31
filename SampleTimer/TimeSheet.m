@@ -19,6 +19,7 @@
     lastAction = FRESH;
     cellIdentifier = @"TimeSheetSplitCell";
     cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellIdentifier];
+    createdAt = [NSDate date];
 
     return self;
 }
