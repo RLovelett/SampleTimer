@@ -136,6 +136,14 @@
     return [customFormatter stringFromInterval:interval];
 }
 
+- (BOOL) displaysHour
+{
+    // TODO: Make this right
+    // Should return YES if the hourFormatter is in use
+    // NO otherwise
+    return NO;
+}
+
 - (NSTimeInterval) getElapsedTimeInterval
 {
     NSTimeInterval interval = 0;
