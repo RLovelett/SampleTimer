@@ -36,6 +36,9 @@ typedef enum
     TimeSheetActions lastAction;
 
     NSTimeIntervalFormatter* formatter;
+    NSTimeIntervalFormatter* hoursFormatter;
+    NSTimeIntervalFormatter* milliFormatter;
+    NSTimeIntervalFormatter* customFormatter;
 }
 
 - (void) setTitle:(NSString*) newTitle;
@@ -54,10 +57,16 @@ typedef enum
 
 - (Boolean) isStarted;
 
+- (BOOL) displaysHour;
+
 - (NSString*) lapAtIndex:(NSIndexPath*) indexPath;
 
 - (NSString*) splitAtIndex:(NSIndexPath*) indexPath;
 
+- (NSString*) getElapsedTime;
+
 - (NSString*) getElapsedTime:(NSString*) format;
+
+- (NSString*) getMilliElapsedTime;
 
 @end

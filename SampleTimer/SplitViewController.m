@@ -84,8 +84,15 @@
 
 - (void) updateLabel
 {
-    display.text = [model getElapsedTime:@"MM:ss.SS"];
-    millidisplay.text = [[model getElapsedTime:@"SSS"] substringWithRange:NSMakeRange(2, 1)];
+    display.text = [model getElapsedTime];
+    if ([model displaysHour])
+    {
+        millidisplay.text = @"";
+    }
+    else
+    {
+        millidisplay.text = [model getMilliElapsedTime];
+    }
 }
 
 - (void) didReceiveMemoryWarning
