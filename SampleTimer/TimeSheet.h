@@ -29,6 +29,9 @@ typedef enum
     // TODO Make the cellIdentifer static const
     NSString* cellIdentifier;
     UITableViewCell* cell;
+    UIColor* darkBlue;
+    UIColor* lightBlue;
+    UIFont* fontAvenirLight;
 
     TimeSheetActions lastAction;
 

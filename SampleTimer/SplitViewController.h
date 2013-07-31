@@ -16,6 +16,11 @@
     NSTimer* updateUI;
     UIView* touchContact;
     UIAlertView* undoAlert;
+
+    UIColor* lightGreen;
+    UIColor* darkGreen;
+    UIColor* lightRed;
+    UIColor* darkRed;
 }
 
 @property(weak, nonatomic) IBOutlet UILabel* display;

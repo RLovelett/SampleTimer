@@ -31,6 +31,11 @@
     splitsTable.rowHeight = 28.0;
 
     undoAlert = [[UIAlertView alloc] initWithTitle:@"SHAKEN" message:@"UNDO?" delegate:self cancelButtonTitle:@"CANCEL" otherButtonTitles:@"OK", nil];
+
+    lightGreen = [UIColor colorWithRed:183 / 255.0f green:242 / 255.0f blue:152 / 255.0f alpha:1.0f];
+    darkGreen = [UIColor colorWithRed:43 / 255.0f green:127 / 255.0f blue:62 / 255.0f alpha:1.0f];
+    lightRed = [UIColor colorWithRed:237 / 255.0f green:102 / 255.0f blue:75 / 255.0f alpha:1.0f];
+    darkRed = [UIColor colorWithRed:204 / 255.0f green:64 / 255.0f blue:36 / 255.0f alpha:1.0f];
 }
 
 - (BOOL) canBecomeFirstResponder
@@ -51,11 +56,11 @@
     {
         NSLog(@"OK was selected.");
         [model undo];
-        
+
         if ([model isStarted])
         {
-            display.textColor = [UIColor colorWithRed:183/255.0f green:242/255.0f blue:152/255.0f alpha:1.0f];
-            millidisplay.textColor = [UIColor colorWithRed:43/255.0f green:127/255.0f blue:62/255.0f alpha:1.0f];
+            display.textColor = lightGreen;
+            millidisplay.textColor = darkGreen;
         }
 
         [self validateNSTimer];
@@ -118,8 +123,8 @@
             [updateUI invalidate];
             [self updateLabel];
 
-            display.textColor = [UIColor colorWithRed:237 / 255.0f green:102 / 255.0f blue:75 / 255.0f alpha:1.0f];
-            millidisplay.textColor = [UIColor colorWithRed:204 / 255.0f green:64 / 255.0f blue:36 / 255.0f alpha:1.0f];
+            display.textColor = lightRed;
+            millidisplay.textColor = darkRed;
 
             splitsTable.userInteractionEnabled = YES;
             splitsTable.scrollEnabled = YES;
