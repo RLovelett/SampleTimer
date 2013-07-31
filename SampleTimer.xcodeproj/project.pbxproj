@@ -8,11 +8,16 @@
 
 /* Begin PBXBuildFile section */
 		1CECF143179E3B4600EC2200 /* Quicksand-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = 1CECF142179E3B4600EC2200 /* Quicksand-Light.otf */; };
-		1CECF145179E3D0500EC2200 /* Bowman.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1CECF144179E3D0500EC2200 /* Bowman.ttf */; };
+		1CEF0F7417A77D9300070205 /* Split-App-Icon-v4-114.png in Resources */ = {isa = PBXBuildFile; fileRef = 1CEF0F7317A77D9300070205 /* Split-App-Icon-v4-114.png */; };
+		1CEF0F7617A77DA400070205 /* Split-App-Icon-v4-114.png in Resources */ = {isa = PBXBuildFile; fileRef = 1CEF0F7517A77DA400070205 /* Split-App-Icon-v4-114.png */; };
+		1CEF0F7A17A86C2D00070205 /* Split-App-Icon-v4-57.png in Resources */ = {isa = PBXBuildFile; fileRef = 1CEF0F7717A86C2D00070205 /* Split-App-Icon-v4-57.png */; };
+		1CEF0F7B17A86C2D00070205 /* Split-App-Icon-v4-72.png in Resources */ = {isa = PBXBuildFile; fileRef = 1CEF0F7817A86C2D00070205 /* Split-App-Icon-v4-72.png */; };
+		1CEF0F7C17A86C2D00070205 /* Split-App-Icon-v4-144.png in Resources */ = {isa = PBXBuildFile; fileRef = 1CEF0F7917A86C2D00070205 /* Split-App-Icon-v4-144.png */; };
+		1CEF0F7E17A86C3C00070205 /* Split-App-Icon-v4-57.png in Resources */ = {isa = PBXBuildFile; fileRef = 1CEF0F7D17A86C3C00070205 /* Split-App-Icon-v4-57.png */; };
+		1CEF0F8017A86C5100070205 /* Split-App-Icon-v4-144.png in Resources */ = {isa = PBXBuildFile; fileRef = 1CEF0F7F17A86C5100070205 /* Split-App-Icon-v4-144.png */; };
+		1CEF0F8217A86C5B00070205 /* Split-App-Icon-v4-72.png in Resources */ = {isa = PBXBuildFile; fileRef = 1CEF0F8117A86C5B00070205 /* Split-App-Icon-v4-72.png */; };
 		943BEFE9179D92EA00CB7E74 /* NSTimeIntervalFormatter.m in Sources */ = {isa = PBXBuildFile; fileRef = 943BEFE8179D92EA00CB7E74 /* NSTimeIntervalFormatter.m */; };
 		943BEFED179D980500CB7E74 /* BPmono.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 943BEFEA179D980500CB7E74 /* BPmono.ttf */; };
-		943BEFEE179D980500CB7E74 /* BPmonoBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 943BEFEB179D980500CB7E74 /* BPmonoBold.ttf */; };
-		943BEFEF179D980500CB7E74 /* BPmonoItalics.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 943BEFEC179D980500CB7E74 /* BPmonoItalics.ttf */; };
 		944D0AB617906590007DFE6A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 944D0AB517906590007DFE6A /* UIKit.framework */; };
 		944D0AB817906590007DFE6A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 944D0AB717906590007DFE6A /* Foundation.framework */; };
 		944D0ABA17906590007DFE6A /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 944D0AB917906590007DFE6A /* CoreGraphics.framework */; };
@@ -30,13 +35,18 @@
 
 /* Begin PBXFileReference section */
 		1CECF142179E3B4600EC2200 /* Quicksand-Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Quicksand-Light.otf"; sourceTree = "<group>"; };
-		1CECF144179E3D0500EC2200 /* Bowman.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Bowman.ttf; sourceTree = "<group>"; };
+		1CEF0F7317A77D9300070205 /* Split-App-Icon-v4-114.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Split-App-Icon-v4-114.png"; sourceTree = "<group>"; };
+		1CEF0F7517A77DA400070205 /* Split-App-Icon-v4-114.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Split-App-Icon-v4-114.png"; sourceTree = "<group>"; };
+		1CEF0F7717A86C2D00070205 /* Split-App-Icon-v4-57.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Split-App-Icon-v4-57.png"; sourceTree = "<group>"; };
+		1CEF0F7817A86C2D00070205 /* Split-App-Icon-v4-72.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Split-App-Icon-v4-72.png"; sourceTree = "<group>"; };
+		1CEF0F7917A86C2D00070205 /* Split-App-Icon-v4-144.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Split-App-Icon-v4-144.png"; sourceTree = "<group>"; };
+		1CEF0F7D17A86C3C00070205 /* Split-App-Icon-v4-57.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Split-App-Icon-v4-57.png"; sourceTree = "<group>"; };
+		1CEF0F7F17A86C5100070205 /* Split-App-Icon-v4-144.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Split-App-Icon-v4-144.png"; sourceTree = "<group>"; };
+		1CEF0F8117A86C5B00070205 /* Split-App-Icon-v4-72.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Split-App-Icon-v4-72.png"; sourceTree = "<group>"; };
 		943BEFE6179D92EA00CB7E74 /* Constants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
 		943BEFE7179D92EA00CB7E74 /* NSTimeIntervalFormatter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSTimeIntervalFormatter.h; sourceTree = "<group>"; };
 		943BEFE8179D92EA00CB7E74 /* NSTimeIntervalFormatter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSTimeIntervalFormatter.m; sourceTree = "<group>"; };
 		943BEFEA179D980500CB7E74 /* BPmono.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = BPmono.ttf; sourceTree = "<group>"; };
-		943BEFEB179D980500CB7E74 /* BPmonoBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = BPmonoBold.ttf; sourceTree = "<group>"; };
-		943BEFEC179D980500CB7E74 /* BPmonoItalics.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = BPmonoItalics.ttf; sourceTree = "<group>"; };
 		944D0AB217906590007DFE6A /* SampleTimer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SampleTimer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		944D0AB517906590007DFE6A /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		944D0AB717906590007DFE6A /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -85,6 +95,10 @@
 		944D0AA917906590007DFE6A = {
 			isa = PBXGroup;
 			children = (
+				1CEF0F8117A86C5B00070205 /* Split-App-Icon-v4-72.png */,
+				1CEF0F7F17A86C5100070205 /* Split-App-Icon-v4-144.png */,
+				1CEF0F7D17A86C3C00070205 /* Split-App-Icon-v4-57.png */,
+				1CEF0F7517A77DA400070205 /* Split-App-Icon-v4-114.png */,
 				944D0ABB17906590007DFE6A /* SampleTimer */,
 				944D0AB417906590007DFE6A /* Frameworks */,
 				944D0AB317906590007DFE6A /* Products */,
@@ -128,11 +142,12 @@
 		944D0ABC17906590007DFE6A /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				1CECF144179E3D0500EC2200 /* Bowman.ttf */,
+				1CEF0F7717A86C2D00070205 /* Split-App-Icon-v4-57.png */,
+				1CEF0F7817A86C2D00070205 /* Split-App-Icon-v4-72.png */,
+				1CEF0F7917A86C2D00070205 /* Split-App-Icon-v4-144.png */,
+				1CEF0F7317A77D9300070205 /* Split-App-Icon-v4-114.png */,
 				1CECF142179E3B4600EC2200 /* Quicksand-Light.otf */,
 				943BEFEA179D980500CB7E74 /* BPmono.ttf */,
-				943BEFEB179D980500CB7E74 /* BPmonoBold.ttf */,
-				943BEFEC179D980500CB7E74 /* BPmonoItalics.ttf */,
 				944D0ABD17906590007DFE6A /* SampleTimer-Info.plist */,
 				944D0ABE17906590007DFE6A /* InfoPlist.strings */,
 				944D0AC117906590007DFE6A /* main.m */,
@@ -212,10 +227,15 @@
 				944D0ACF17906590007DFE6A /* MainStoryboard_iPhone.storyboard in Resources */,
 				944D0AD217906590007DFE6A /* MainStoryboard_iPad.storyboard in Resources */,
 				943BEFED179D980500CB7E74 /* BPmono.ttf in Resources */,
-				943BEFEE179D980500CB7E74 /* BPmonoBold.ttf in Resources */,
-				943BEFEF179D980500CB7E74 /* BPmonoItalics.ttf in Resources */,
 				1CECF143179E3B4600EC2200 /* Quicksand-Light.otf in Resources */,
-				1CECF145179E3D0500EC2200 /* Bowman.ttf in Resources */,
+				1CEF0F7417A77D9300070205 /* Split-App-Icon-v4-114.png in Resources */,
+				1CEF0F7617A77DA400070205 /* Split-App-Icon-v4-114.png in Resources */,
+				1CEF0F7A17A86C2D00070205 /* Split-App-Icon-v4-57.png in Resources */,
+				1CEF0F7B17A86C2D00070205 /* Split-App-Icon-v4-72.png in Resources */,
+				1CEF0F7C17A86C2D00070205 /* Split-App-Icon-v4-144.png in Resources */,
+				1CEF0F7E17A86C3C00070205 /* Split-App-Icon-v4-57.png in Resources */,
+				1CEF0F8017A86C5100070205 /* Split-App-Icon-v4-144.png in Resources */,
+				1CEF0F8217A86C5B00070205 /* Split-App-Icon-v4-72.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
