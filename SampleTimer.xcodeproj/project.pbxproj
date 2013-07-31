@@ -8,11 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		1CECF143179E3B4600EC2200 /* Quicksand-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = 1CECF142179E3B4600EC2200 /* Quicksand-Light.otf */; };
-		1CEF0F7417A77D9300070205 /* Split-App-Icon-v4-114.png in Resources */ = {isa = PBXBuildFile; fileRef = 1CEF0F7317A77D9300070205 /* Split-App-Icon-v4-114.png */; };
 		1CEF0F7617A77DA400070205 /* Split-App-Icon-v4-114.png in Resources */ = {isa = PBXBuildFile; fileRef = 1CEF0F7517A77DA400070205 /* Split-App-Icon-v4-114.png */; };
-		1CEF0F7A17A86C2D00070205 /* Split-App-Icon-v4-57.png in Resources */ = {isa = PBXBuildFile; fileRef = 1CEF0F7717A86C2D00070205 /* Split-App-Icon-v4-57.png */; };
-		1CEF0F7B17A86C2D00070205 /* Split-App-Icon-v4-72.png in Resources */ = {isa = PBXBuildFile; fileRef = 1CEF0F7817A86C2D00070205 /* Split-App-Icon-v4-72.png */; };
-		1CEF0F7C17A86C2D00070205 /* Split-App-Icon-v4-144.png in Resources */ = {isa = PBXBuildFile; fileRef = 1CEF0F7917A86C2D00070205 /* Split-App-Icon-v4-144.png */; };
 		1CEF0F7E17A86C3C00070205 /* Split-App-Icon-v4-57.png in Resources */ = {isa = PBXBuildFile; fileRef = 1CEF0F7D17A86C3C00070205 /* Split-App-Icon-v4-57.png */; };
 		1CEF0F8017A86C5100070205 /* Split-App-Icon-v4-144.png in Resources */ = {isa = PBXBuildFile; fileRef = 1CEF0F7F17A86C5100070205 /* Split-App-Icon-v4-144.png */; };
 		1CEF0F8217A86C5B00070205 /* Split-App-Icon-v4-72.png in Resources */ = {isa = PBXBuildFile; fileRef = 1CEF0F8117A86C5B00070205 /* Split-App-Icon-v4-72.png */; };
@@ -35,11 +31,7 @@
 
 /* Begin PBXFileReference section */
 		1CECF142179E3B4600EC2200 /* Quicksand-Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Quicksand-Light.otf"; sourceTree = "<group>"; };
-		1CEF0F7317A77D9300070205 /* Split-App-Icon-v4-114.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Split-App-Icon-v4-114.png"; sourceTree = "<group>"; };
 		1CEF0F7517A77DA400070205 /* Split-App-Icon-v4-114.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Split-App-Icon-v4-114.png"; sourceTree = "<group>"; };
-		1CEF0F7717A86C2D00070205 /* Split-App-Icon-v4-57.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Split-App-Icon-v4-57.png"; sourceTree = "<group>"; };
-		1CEF0F7817A86C2D00070205 /* Split-App-Icon-v4-72.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Split-App-Icon-v4-72.png"; sourceTree = "<group>"; };
-		1CEF0F7917A86C2D00070205 /* Split-App-Icon-v4-144.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Split-App-Icon-v4-144.png"; sourceTree = "<group>"; };
 		1CEF0F7D17A86C3C00070205 /* Split-App-Icon-v4-57.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Split-App-Icon-v4-57.png"; sourceTree = "<group>"; };
 		1CEF0F7F17A86C5100070205 /* Split-App-Icon-v4-144.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Split-App-Icon-v4-144.png"; sourceTree = "<group>"; };
 		1CEF0F8117A86C5B00070205 /* Split-App-Icon-v4-72.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Split-App-Icon-v4-72.png"; sourceTree = "<group>"; };
@@ -142,10 +134,6 @@
 		944D0ABC17906590007DFE6A /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				1CEF0F7717A86C2D00070205 /* Split-App-Icon-v4-57.png */,
-				1CEF0F7817A86C2D00070205 /* Split-App-Icon-v4-72.png */,
-				1CEF0F7917A86C2D00070205 /* Split-App-Icon-v4-144.png */,
-				1CEF0F7317A77D9300070205 /* Split-App-Icon-v4-114.png */,
 				1CECF142179E3B4600EC2200 /* Quicksand-Light.otf */,
 				943BEFEA179D980500CB7E74 /* BPmono.ttf */,
 				944D0ABD17906590007DFE6A /* SampleTimer-Info.plist */,
@@ -228,11 +216,7 @@
 				944D0AD217906590007DFE6A /* MainStoryboard_iPad.storyboard in Resources */,
 				943BEFED179D980500CB7E74 /* BPmono.ttf in Resources */,
 				1CECF143179E3B4600EC2200 /* Quicksand-Light.otf in Resources */,
-				1CEF0F7417A77D9300070205 /* Split-App-Icon-v4-114.png in Resources */,
 				1CEF0F7617A77DA400070205 /* Split-App-Icon-v4-114.png in Resources */,
-				1CEF0F7A17A86C2D00070205 /* Split-App-Icon-v4-57.png in Resources */,
-				1CEF0F7B17A86C2D00070205 /* Split-App-Icon-v4-72.png in Resources */,
-				1CEF0F7C17A86C2D00070205 /* Split-App-Icon-v4-144.png in Resources */,
 				1CEF0F7E17A86C3C00070205 /* Split-App-Icon-v4-57.png in Resources */,
 				1CEF0F8017A86C5100070205 /* Split-App-Icon-v4-144.png in Resources */,
 				1CEF0F8217A86C5B00070205 /* Split-App-Icon-v4-72.png in Resources */,
