@@ -23,11 +23,15 @@ typedef enum
     NSDate* startTime;
     NSDate* stopTime;
     NSDate* tempTime;
+    NSDate* createdAt;
     NSMutableArray* splitTimes;
 
     // TODO Make the cellIdentifer static const
     NSString* cellIdentifier;
     UITableViewCell* cell;
+    UIColor* darkBlue;
+    UIColor* lightBlue;
+    UIFont* fontAvenirLight;
 
     TimeSheetActions lastAction;
 

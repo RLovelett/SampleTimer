@@ -19,6 +19,12 @@
     lastAction = FRESH;
     cellIdentifier = @"TimeSheetSplitCell";
     cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellIdentifier];
+    createdAt = [NSDate date];
+
+    darkBlue = [UIColor colorWithRed:102 / 255.0f green:154 / 255.0f blue:249 / 255.0f alpha:1.0f];
+    lightBlue = [UIColor colorWithRed:183 / 255.0f green:206 / 255.0f blue:247 / 255.0f alpha:1.0f];
+
+    fontAvenirLight = [UIFont fontWithName:@"Avenir Next Ultra Light" size:20.0];
 
     return self;
 }
@@ -155,10 +161,9 @@
     [localCell.textLabel setText:[self lapAtIndex:indexPath]];
     [localCell.detailTextLabel setText:[self splitAtIndex:indexPath]];
 
-    localCell.textLabel.textColor = [UIColor colorWithRed:102 / 255.0f green:154 / 255.0f blue:249 / 255.0f alpha:1.0f];
-    localCell.detailTextLabel.textColor = [UIColor colorWithRed:183 / 255.0f green:206 / 255.0f blue:247 / 255.0f alpha:1.0f];
+    localCell.textLabel.textColor = darkBlue;
+    localCell.detailTextLabel.textColor = lightBlue;
 
-    UIFont* fontAvenirLight = [UIFont fontWithName:@"Avenir Next Ultra Light" size:20.0];
     localCell.textLabel.font = fontAvenirLight;
     localCell.detailTextLabel.font = fontAvenirLight;
 
