@@ -6,6 +6,7 @@
 //  Copyright (c) 2013 Ryan Lovelett. All rights reserved.
 //
 
+#import "Constants.h"
 #import "TimeSheet.h"
 #import "NSTimeIntervalFormatter.h"
 
@@ -15,6 +16,13 @@
 {
     self = [super init];
     formatter = [[NSTimeIntervalFormatter alloc] init];
+    hoursFormatter = [[NSTimeIntervalFormatter alloc] init];
+    milliFormatter = [[NSTimeIntervalFormatter alloc] init];
+    customFormatter = [[NSTimeIntervalFormatter alloc] init];
+    [formatter setFormat:@"MM:ss.SS"];
+    [hoursFormatter setFormat:@"HH:MM:ss"];
+    [milliFormatter setFormat:@"SSS"];
+    
     splitTimes = [[NSMutableArray alloc] init];
     lastAction = FRESH;
     cellIdentifier = @"TimeSheetSplitCell";
@@ -115,8 +123,8 @@
     NSDate* stop = [splitTimes objectAtIndex:(indexPath.row + 1)];
     NSTimeInterval interval = [stop timeIntervalSinceDate:start];
 
-    [formatter setFormat:@"MM:ss.SSS"];
-    return [formatter stringFromInterval:interval];
+    [customFormatter setFormat:@"MM:ss.SSS"];
+    return [customFormatter stringFromInterval:interval];
 }
 
 - (NSString*) splitAtIndex:(NSIndexPath*) indexPath
@@ -124,11 +132,11 @@
     NSDate* stop = [splitTimes objectAtIndex:indexPath.row + 1];
     NSTimeInterval interval = [stop timeIntervalSinceDate:startTime];
 
-    [formatter setFormat:@"MM:ss.SSS"];
-    return [formatter stringFromInterval:interval];
+    [customFormatter setFormat:@"MM:ss.SSS"];
+    return [customFormatter stringFromInterval:interval];
 }
 
-- (NSString*) getElapsedTime:(NSString*) format
+- (NSTimeInterval) getElapsedTimeInterval
 {
     NSTimeInterval interval = 0;
     if (stopTime == NULL)
@@ -140,9 +148,28 @@
     {
         interval = [tempTime timeIntervalSinceDate:startTime];
     }
+    
+    return interval;
+}
 
-    [formatter setFormat:format];
-    return [formatter stringFromInterval:interval];
+- (NSString*) getElapsedTime
+{
+    NSTimeInterval interval = [self getElapsedTimeInterval];
+    
+    if (interval >= SECONDS_PER_HOUR)
+    {
+        return [hoursFormatter stringFromInterval:interval];
+    }
+    else
+    {
+        return [formatter stringFromInterval:interval];
+    }
+}
+
+- (NSString*) getMilliElapsedTime
+{
+    NSTimeInterval interval = [self getElapsedTimeInterval];
+    return [[milliFormatter stringFromInterval:interval] substringWithRange:NSMakeRange(2, 1)];
 }
 
 - (NSInteger) tableView:(UITableView*) tableView numberOfRowsInSection:(NSInteger) section
