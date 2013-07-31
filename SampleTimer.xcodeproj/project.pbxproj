@@ -12,6 +12,7 @@
 		1CEF0F7E17A86C3C00070205 /* Split-App-Icon-v4-57.png in Resources */ = {isa = PBXBuildFile; fileRef = 1CEF0F7D17A86C3C00070205 /* Split-App-Icon-v4-57.png */; };
 		1CEF0F8017A86C5100070205 /* Split-App-Icon-v4-144.png in Resources */ = {isa = PBXBuildFile; fileRef = 1CEF0F7F17A86C5100070205 /* Split-App-Icon-v4-144.png */; };
 		1CEF0F8217A86C5B00070205 /* Split-App-Icon-v4-72.png in Resources */ = {isa = PBXBuildFile; fileRef = 1CEF0F8117A86C5B00070205 /* Split-App-Icon-v4-72.png */; };
+		94141B4517A98DB000C99447 /* DataManagerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 94141B4417A98DB000C99447 /* DataManagerViewController.m */; };
 		943BEFE9179D92EA00CB7E74 /* NSTimeIntervalFormatter.m in Sources */ = {isa = PBXBuildFile; fileRef = 943BEFE8179D92EA00CB7E74 /* NSTimeIntervalFormatter.m */; };
 		943BEFED179D980500CB7E74 /* BPmono.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 943BEFEA179D980500CB7E74 /* BPmono.ttf */; };
 		944D0AB617906590007DFE6A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 944D0AB517906590007DFE6A /* UIKit.framework */; };
@@ -35,6 +36,8 @@
 		1CEF0F7D17A86C3C00070205 /* Split-App-Icon-v4-57.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Split-App-Icon-v4-57.png"; sourceTree = "<group>"; };
 		1CEF0F7F17A86C5100070205 /* Split-App-Icon-v4-144.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Split-App-Icon-v4-144.png"; sourceTree = "<group>"; };
 		1CEF0F8117A86C5B00070205 /* Split-App-Icon-v4-72.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Split-App-Icon-v4-72.png"; sourceTree = "<group>"; };
+		94141B4317A98DB000C99447 /* DataManagerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataManagerViewController.h; sourceTree = "<group>"; };
+		94141B4417A98DB000C99447 /* DataManagerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataManagerViewController.m; sourceTree = "<group>"; };
 		943BEFE6179D92EA00CB7E74 /* Constants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
 		943BEFE7179D92EA00CB7E74 /* NSTimeIntervalFormatter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSTimeIntervalFormatter.h; sourceTree = "<group>"; };
 		943BEFE8179D92EA00CB7E74 /* NSTimeIntervalFormatter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSTimeIntervalFormatter.m; sourceTree = "<group>"; };
@@ -127,6 +130,8 @@
 				944D0AD317906590007DFE6A /* SplitViewController.h */,
 				944D0AD417906590007DFE6A /* SplitViewController.m */,
 				944D0ABC17906590007DFE6A /* Supporting Files */,
+				94141B4317A98DB000C99447 /* DataManagerViewController.h */,
+				94141B4417A98DB000C99447 /* DataManagerViewController.m */,
 			);
 			path = SampleTimer;
 			sourceTree = "<group>";
@@ -235,6 +240,7 @@
 				944D0AD517906590007DFE6A /* SplitViewController.m in Sources */,
 				944D0ADE179066D6007DFE6A /* TimeSheet.m in Sources */,
 				943BEFE9179D92EA00CB7E74 /* NSTimeIntervalFormatter.m in Sources */,
+				94141B4517A98DB000C99447 /* DataManagerViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

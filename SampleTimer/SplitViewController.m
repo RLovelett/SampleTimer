@@ -152,4 +152,9 @@
     }
 }
 
+- (void) setTimeSheet:(TimeSheet*) newTimeSheet
+{
+    model = newTimeSheet;
+}
+
 @end

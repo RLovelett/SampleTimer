@@ -33,4 +33,6 @@
 
 - (IBAction) gotoDataManager:(UISwipeGestureRecognizer*) sender;
 
+- (void) setTimeSheet:(TimeSheet*) newTimeSheet;
+
 @end
