@@ -14,6 +14,23 @@
 @synthesize millidisplay;
 @synthesize splitsTable;
 
+- (id)initWithCoder:(NSCoder *)decoder
+{
+    if (self = [super initWithCoder:decoder])
+    {
+        undoAlert = [[UIAlertView alloc] initWithTitle:@"SHAKEN" message:@"UNDO?" delegate:self cancelButtonTitle:@"CANCEL" otherButtonTitles:@"OK", nil];
+
+        lightGreen = [UIColor colorWithRed:183 / 255.0f green:242 / 255.0f blue:152 / 255.0f alpha:1.0f];
+        darkGreen = [UIColor colorWithRed:43 / 255.0f green:127 / 255.0f blue:62 / 255.0f alpha:1.0f];
+        lightRed = [UIColor colorWithRed:237 / 255.0f green:102 / 255.0f blue:75 / 255.0f alpha:1.0f];
+        darkRed = [UIColor colorWithRed:204 / 255.0f green:64 / 255.0f blue:36 / 255.0f alpha:1.0f];
+
+        splitsTable.rowHeight = 28.0;
+    }
+
+    return self;
+}
+
 - (void) viewDidLoad
 {
     [super viewDidLoad];
@@ -21,21 +38,8 @@
     [self canBecomeFirstResponder];
 
     // Do any additional setup after loading the view, typically from a nib.
-    model = [[TimeSheet alloc] init];
-
-    //labelFont = [UIFont fontWithName:@"BPmono" size:50];
-    //display.font = labelFont;
-    //millidisplay.font = [UIFont fontWithName:@"BPmono" size:24];
 
     [[self splitsTable] setDataSource:model];
-    splitsTable.rowHeight = 28.0;
-
-    undoAlert = [[UIAlertView alloc] initWithTitle:@"SHAKEN" message:@"UNDO?" delegate:self cancelButtonTitle:@"CANCEL" otherButtonTitles:@"OK", nil];
-
-    lightGreen = [UIColor colorWithRed:183 / 255.0f green:242 / 255.0f blue:152 / 255.0f alpha:1.0f];
-    darkGreen = [UIColor colorWithRed:43 / 255.0f green:127 / 255.0f blue:62 / 255.0f alpha:1.0f];
-    lightRed = [UIColor colorWithRed:237 / 255.0f green:102 / 255.0f blue:75 / 255.0f alpha:1.0f];
-    darkRed = [UIColor colorWithRed:204 / 255.0f green:64 / 255.0f blue:36 / 255.0f alpha:1.0f];
 }
 
 - (BOOL) canBecomeFirstResponder
