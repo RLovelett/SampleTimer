@@ -34,8 +34,6 @@
 - (void) viewDidLoad
 {
     [super viewDidLoad];
-    // Register motion ended
-    [self canBecomeFirstResponder];
 
     // Do any additional setup after loading the view, typically from a nib.
 
