@@ -14,7 +14,7 @@
 @synthesize millidisplay;
 @synthesize splitsTable;
 
-- (id)initWithCoder:(NSCoder *)decoder
+- (id) initWithCoder:(NSCoder*) decoder
 {
     if (self = [super initWithCoder:decoder])
     {
@@ -38,6 +38,39 @@
     // Do any additional setup after loading the view, typically from a nib.
 
     [[self splitsTable] setDataSource:model];
+
+    // Make sure the UI reflects the current model state
+    [self syncDisplay];
+}
+
+- (void) syncDisplay
+{
+    if([model isStarted])
+    {
+        // Make sure the colors are right
+        display.textColor = lightGreen;
+        millidisplay.textColor = darkGreen;
+
+        splitsTable.userInteractionEnabled = NO;
+        splitsTable.scrollEnabled = NO;
+
+        [self validateNSTimer];
+    }
+
+    if([model isStopped])
+    {
+        [updateUI invalidate];
+        [self updateLabel];
+
+        display.textColor = lightRed;
+        millidisplay.textColor = darkRed;
+
+        splitsTable.userInteractionEnabled = YES;
+        splitsTable.scrollEnabled = YES;
+    }
+
+    // Refresh the table
+    [splitsTable reloadData];
 }
 
 - (BOOL) canBecomeFirstResponder
@@ -58,17 +91,7 @@
     {
         NSLog(@"OK was selected.");
         [model undo];
-
-        if ([model isStarted])
-        {
-            display.textColor = lightGreen;
-            millidisplay.textColor = darkGreen;
-        }
-
-        [self validateNSTimer];
-        [splitsTable reloadData];
-        splitsTable.userInteractionEnabled = NO;
-        splitsTable.scrollEnabled = NO;
+        [self syncDisplay];
     }
     else if ([title isEqualToString:@"CANCEL"])
     {
@@ -116,9 +139,7 @@
             [model start];
         }
 
-        [self validateNSTimer];
-
-        [[self splitsTable] reloadData];
+        [self syncDisplay];
     }
 }
 
@@ -129,14 +150,7 @@
         if (![model isStopped])
         {
             [model stop];
-            [updateUI invalidate];
-            [self updateLabel];
-
-            display.textColor = lightRed;
-            millidisplay.textColor = darkRed;
-
-            splitsTable.userInteractionEnabled = YES;
-            splitsTable.scrollEnabled = YES;
+            [self syncDisplay];
         }
     }
 }
