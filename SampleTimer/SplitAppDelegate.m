@@ -10,8 +10,13 @@
 
 @implementation SplitAppDelegate
 
+@synthesize timeSheets;
+@synthesize activeTimeSheet;
+
 - (BOOL) application:(UIApplication*) application didFinishLaunchingWithOptions:(NSDictionary*) launchOptions
 {
+    timeSheets = [[NSMutableArray alloc] init];
+
     // Override point for customization after application launch.
     return YES;
 }

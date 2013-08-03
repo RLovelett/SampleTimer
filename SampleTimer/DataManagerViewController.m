@@ -7,7 +7,6 @@
 //
 
 #import "DataManagerViewController.h"
-#import "TimeSheet.h"
 #import "SplitViewController.h"
 
 @interface DataManagerViewController ()
@@ -16,12 +15,28 @@
 
 @implementation DataManagerViewController
 
+- (id)initWithCoder:(NSCoder *)decoder
+{
+    if (self = [super initWithCoder:decoder])
+    {
+        appDelegate = (SplitAppDelegate*)[[UIApplication sharedApplication] delegate];
+    }
+
+    return self;
+}
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
-    timeSheets = [[NSMutableArray alloc] init];
-    [timeSheets addObject:[[TimeSheet alloc] init]];
+
+    timeSheets = appDelegate.timeSheets;
+    activeTimeSheet = appDelegate.activeTimeSheet;
+
+    if (activeTimeSheet == nil)
+    {
+        appDelegate.activeTimeSheet = activeTimeSheet = [timeSheets createTimeSheet];
+    }
 }
 
 - (void)didReceiveMemoryWarning
@@ -38,10 +53,8 @@
         // Get reference to the destination view controller
         SplitViewController* vc = [segue destinationViewController];
         
-        TimeSheet* timeSheetToDisplay = (TimeSheet*)[timeSheets lastObject];
-        
         // Pass any objects to the view controller here, like...
-        [vc setTimeSheet:timeSheetToDisplay];
+        [vc setTimeSheet: activeTimeSheet];
     }
 }
 
