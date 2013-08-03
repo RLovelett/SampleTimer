@@ -147,14 +147,14 @@
 - (NSTimeInterval) getElapsedTimeInterval
 {
     NSTimeInterval interval = 0;
-    if (stopTime == NULL)
+    if ([self isStopped])
     {
-        NSDate* now = [NSDate date];
-        interval = [now timeIntervalSinceDate:startTime];
+        interval = [stopTime timeIntervalSinceDate:startTime];
     }
     else
     {
-        interval = [tempTime timeIntervalSinceDate:startTime];
+        NSDate* now = [NSDate date];
+        interval = [now timeIntervalSinceDate:startTime];
     }
     
     return interval;
