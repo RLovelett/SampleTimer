@@ -7,7 +7,9 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <CoreLocation/CoreLocation.h>
 #import "NSTimeIntervalFormatter.h"
+
 
 typedef enum
 {
@@ -25,6 +27,8 @@ typedef enum
     NSDate* tempTime;
     NSDate* createdAt;
     NSMutableArray* splitTimes;
+    CLLocation* startLocation;
+    CLLocationManager *locationManager;
 
     // TODO Make the cellIdentifer static const
     NSString* cellIdentifier;
@@ -68,5 +72,6 @@ typedef enum
 - (NSString*) getElapsedTime:(NSString*) format;
 
 - (NSString*) getMilliElapsedTime;
+
 
 @end

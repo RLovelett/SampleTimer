@@ -33,7 +33,9 @@
     lightBlue = [UIColor colorWithRed:183 / 255.0f green:206 / 255.0f blue:247 / 255.0f alpha:1.0f];
 
     fontAvenirLight = [UIFont fontWithName:@"Avenir Next Ultra Light" size:20.0];
-
+    
+    locationManager = [[CLLocationManager alloc] init];    
+    
     return self;
 }
 
@@ -52,6 +54,10 @@
     lastAction = START;
     startTime = tempTime;
     [splitTimes addObject:tempTime];
+    
+    [locationManager startUpdatingLocation];
+    startLocation = [locationManager location];
+    [locationManager stopUpdatingLocation];
 }
 
 - (void) addSplit
