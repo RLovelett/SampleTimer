@@ -13,6 +13,7 @@
 @synthesize display;
 @synthesize millidisplay;
 @synthesize splitsTable;
+@synthesize locationTest;
 
 - (id) initWithCoder:(NSCoder*) decoder
 {
@@ -118,6 +119,7 @@
     {
         millidisplay.text = [model getMilliElapsedTime];
     }
+    //locationTest.text = (@"Start Location %f %f", startLocation.coordinate.latitude, startLocation.coordinate.longitude);
 }
 
 - (void) didReceiveMemoryWarning

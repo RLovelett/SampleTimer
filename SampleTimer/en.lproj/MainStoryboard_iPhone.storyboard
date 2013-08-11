@@ -146,6 +146,11 @@
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YIZ-rb-Lxv">
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="0.074246941348767109" green="0.085765449530355031" blue="0.1071428571428571" alpha="1" colorSpace="calibratedRGB"/>
                         <gestureRecognizers/>
@@ -154,7 +159,9 @@
                             <constraint firstItem="wj2-Us-peV" firstAttribute="top" secondItem="lC1-K0-1nM" secondAttribute="top" type="default" id="2b6-1w-lqa"/>
                             <constraint firstItem="LI7-1U-1o4" firstAttribute="top" secondItem="lC1-K0-1nM" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="3ao-oV-gj2"/>
                             <constraint firstAttribute="bottom" secondItem="LI7-1U-1o4" secondAttribute="bottom" constant="25" type="user" id="7cs-Z3-dLm"/>
+                            <constraint firstItem="YIZ-rb-Lxv" firstAttribute="top" secondItem="3" secondAttribute="top" constant="20" symbolic="YES" type="default" id="96n-X7-bbw"/>
                             <constraint firstItem="NGG-s1-urj" firstAttribute="top" secondItem="3" secondAttribute="top" constant="55" id="9um-Uk-0en"/>
+                            <constraint firstItem="YIZ-rb-Lxv" firstAttribute="centerX" secondItem="VAc-Cz-8xh" secondAttribute="centerX" type="default" id="A3Y-Fo-oXU"/>
                             <constraint firstItem="VAc-Cz-8xh" firstAttribute="leading" secondItem="3" secondAttribute="leading" constant="36" type="user" id="Ff0-wd-cyp"/>
                             <constraint firstAttribute="trailing" secondItem="LI7-1U-1o4" secondAttribute="trailing" constant="36" type="user" id="IrT-gO-cHB"/>
                             <constraint firstItem="VAc-Cz-8xh" firstAttribute="top" secondItem="3" secondAttribute="top" constant="60" type="user" id="JpP-uf-bpp"/>
@@ -175,6 +182,7 @@
                     <navigationItem key="navigationItem" id="Slb-ol-BIk"/>
                     <connections>
                         <outlet property="display" destination="VAc-Cz-8xh" id="ipK-hl-5Ep"/>
+                        <outlet property="locationTest" destination="YIZ-rb-Lxv" id="h9b-q7-Ezy"/>
                         <outlet property="millidisplay" destination="NGG-s1-urj" id="Ad2-ee-3bm"/>
                         <outlet property="splitsTable" destination="LI7-1U-1o4" id="WKq-vB-K2r"/>
                     </connections>
@@ -200,37 +208,6 @@
             <point key="canvasLocation" x="237" y="-171"/>
         </scene>
     </scenes>
-    <classes>
-        <class className="DataManagerViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/DataManagerViewController.h"/>
-        </class>
-        <class className="NSLayoutConstraint" superclassName="NSObject">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
-        </class>
-        <class className="SplitViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/SplitViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="gotoDataManager:" candidateClass="UISwipeGestureRecognizer"/>
-                <relationship kind="action" name="startOnTap:" candidateClass="UITapGestureRecognizer"/>
-                <relationship kind="action" name="stopOnHold:" candidateClass="UILongPressGestureRecognizer"/>
-                <relationship kind="outlet" name="display" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="millidisplay" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="splitsTable" candidateClass="UITableView"/>
-            </relationships>
-        </class>
-        <class className="UICollectionReusableView" superclassName="UIView">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/UICollectionReusableView.h"/>
-        </class>
-        <class className="UICollectionViewCell" superclassName="UICollectionReusableView">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/UICollectionViewCell.h"/>
-        </class>
-        <class className="UICollectionViewFlowLayout" superclassName="UICollectionViewLayout">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/UICollectionViewFlowLayout.h"/>
-        </class>
-        <class className="UICollectionViewLayout" superclassName="NSObject">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/UICollectionViewLayout.h"/>
-        </class>
-    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>

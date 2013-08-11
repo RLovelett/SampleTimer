@@ -26,6 +26,7 @@
 @property(weak, nonatomic) IBOutlet UILabel* display;
 @property(weak, nonatomic) IBOutlet UILabel* millidisplay;
 @property(weak, nonatomic) IBOutlet UITableView* splitsTable;
+@property (weak, nonatomic) IBOutlet UILabel *locationTest;
 
 - (IBAction) startOnTap:(UITapGestureRecognizer*) sender;
 
