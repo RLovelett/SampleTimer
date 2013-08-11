@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1CA0FBE017B7DA7300C7F209 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1CA0FBDF17B7DA7300C7F209 /* CoreLocation.framework */; };
 		1CECF143179E3B4600EC2200 /* Quicksand-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = 1CECF142179E3B4600EC2200 /* Quicksand-Light.otf */; };
 		1CEF0F7617A77DA400070205 /* Split-App-Icon-v4-114.png in Resources */ = {isa = PBXBuildFile; fileRef = 1CEF0F7517A77DA400070205 /* Split-App-Icon-v4-114.png */; };
 		1CEF0F7E17A86C3C00070205 /* Split-App-Icon-v4-57.png in Resources */ = {isa = PBXBuildFile; fileRef = 1CEF0F7D17A86C3C00070205 /* Split-App-Icon-v4-57.png */; };
@@ -32,6 +33,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1CA0FBDF17B7DA7300C7F209 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		1CECF142179E3B4600EC2200 /* Quicksand-Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Quicksand-Light.otf"; sourceTree = "<group>"; };
 		1CEF0F7517A77DA400070205 /* Split-App-Icon-v4-114.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Split-App-Icon-v4-114.png"; sourceTree = "<group>"; };
 		1CEF0F7D17A86C3C00070205 /* Split-App-Icon-v4-57.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Split-App-Icon-v4-57.png"; sourceTree = "<group>"; };
@@ -71,6 +73,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1CA0FBE017B7DA7300C7F209 /* CoreLocation.framework in Frameworks */,
 				944D0AB617906590007DFE6A /* UIKit.framework in Frameworks */,
 				944D0AB817906590007DFE6A /* Foundation.framework in Frameworks */,
 				944D0ABA17906590007DFE6A /* CoreGraphics.framework in Frameworks */,
@@ -107,7 +110,6 @@
 				1CEF0F7D17A86C3C00070205 /* Split-App-Icon-v4-57.png */,
 				1CEF0F7517A77DA400070205 /* Split-App-Icon-v4-114.png */,
 				944D0ABB17906590007DFE6A /* SampleTimer */,
-				944D0AB417906590007DFE6A /* Frameworks */,
 				944D0AB317906590007DFE6A /* Products */,
 			);
 			sourceTree = "<group>";
@@ -123,16 +125,19 @@
 		944D0AB417906590007DFE6A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				1CA0FBDF17B7DA7300C7F209 /* CoreLocation.framework */,
 				944D0AB517906590007DFE6A /* UIKit.framework */,
 				944D0AB717906590007DFE6A /* Foundation.framework */,
 				944D0AB917906590007DFE6A /* CoreGraphics.framework */,
 			);
 			name = Frameworks;
+			path = ..;
 			sourceTree = "<group>";
 		};
 		944D0ABB17906590007DFE6A /* SampleTimer */ = {
 			isa = PBXGroup;
 			children = (
+				944D0AB417906590007DFE6A /* Frameworks */,
 				943BEFE5179D92C700CB7E74 /* NSTimeIntervalFormatter */,
 				944D0ADB179066A1007DFE6A /* Time */,
 				944D0AC417906590007DFE6A /* SplitAppDelegate.h */,

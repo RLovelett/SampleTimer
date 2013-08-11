@@ -19,7 +19,7 @@ typedef enum
     STOP
 } TimeSheetActions;
 
-@interface TimeSheet : NSObject <UITableViewDataSource>
+@interface TimeSheet : NSObject <UITableViewDataSource, CLLocationManagerDelegate>
 {
     NSString* eventTitle;
     NSDate* startTime;

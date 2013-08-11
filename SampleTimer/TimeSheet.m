@@ -34,7 +34,8 @@
 
     fontAvenirLight = [UIFont fontWithName:@"Avenir Next Ultra Light" size:20.0];
     
-    locationManager = [[CLLocationManager alloc] init];    
+    locationManager = [[CLLocationManager alloc] init];
+    locationManager.delegate = self;
     
     return self;
 }
@@ -58,6 +59,8 @@
     [locationManager startUpdatingLocation];
     startLocation = [locationManager location];
     [locationManager stopUpdatingLocation];
+    
+    NSLog(@"Start Location %f %f", startLocation.coordinate.latitude, startLocation.coordinate.longitude);
 }
 
 - (void) addSplit
