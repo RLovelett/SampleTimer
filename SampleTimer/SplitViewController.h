@@ -34,6 +34,8 @@
 
 - (IBAction) gotoDataManager:(UISwipeGestureRecognizer*) sender;
 
+- (IBAction) undoOnTwoFingerDoubleTap:(UITapGestureRecognizer *)sender;
+
 - (void) setTimeSheet:(TimeSheet*) newTimeSheet;
 
 @end

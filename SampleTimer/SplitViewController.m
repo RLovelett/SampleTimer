@@ -162,6 +162,12 @@
     NSLog(@"Swiped!");
 }
 
+- (IBAction) undoOnTwoFingerDoubleTap:(UITapGestureRecognizer *)sender
+{
+    [model undo];
+    [self syncDisplay];
+}
+
 - (void) validateNSTimer
 {
     if (![updateUI isValid])

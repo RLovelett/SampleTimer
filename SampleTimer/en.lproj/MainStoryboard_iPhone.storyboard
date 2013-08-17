@@ -177,6 +177,7 @@
                             <outletCollection property="gestureRecognizers" destination="9ba-3J-muN" appends="YES" id="dbR-pT-cAY"/>
                             <outletCollection property="gestureRecognizers" destination="1Qr-zK-6f0" appends="YES" id="f7O-CI-mtM"/>
                             <outletCollection property="gestureRecognizers" destination="QQY-nm-TRa" appends="YES" id="iPv-Ps-SlD"/>
+                            <outletCollection property="gestureRecognizers" destination="7Wx-L8-FNy" appends="YES" id="utL-k4-Kim"/>
                         </connections>
                     </view>
                     <navigationItem key="navigationItem" id="Slb-ol-BIk"/>
@@ -204,6 +205,11 @@
                         <segue destination="DfY-CJ-Ygq" kind="modal" id="8tE-GW-TYw"/>
                     </connections>
                 </swipeGestureRecognizer>
+                <tapGestureRecognizer numberOfTapsRequired="2" numberOfTouchesRequired="2" id="7Wx-L8-FNy">
+                    <connections>
+                        <action selector="undoOnTwoFingerDoubleTap:" destination="2" id="mQ1-FC-6uh"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="237" y="-171"/>
         </scene>
