@@ -57,10 +57,6 @@
     [splitTimes addObject:tempTime];
     
     [locationManager startUpdatingLocation];
-    startLocation = [locationManager location];
-    [locationManager stopUpdatingLocation];
-    
-    NSLog(@"Start Location %f %f", startLocation.coordinate.latitude, startLocation.coordinate.longitude);
 }
 
 - (void) addSplit
@@ -212,6 +208,14 @@
     localCell.detailTextLabel.font = fontAvenirLight;
 
     return localCell;
+}
+
+- (void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray *)locations
+{
+    [locationManager stopUpdatingLocation];
+    startLocation = [locationManager location];
+    
+    NSLog(@"Start Location %f %f", startLocation.coordinate.latitude, startLocation.coordinate.longitude);
 }
 
 @end
